@@ -6,7 +6,7 @@
 
 //2 - Exercícios de escrita de código
 
-//1.Xonstrua um programa, seguindo os seguintes passos:
+//1.Construa um programa, seguindo os seguintes passos:
 
 //const nome 
 //let idade
@@ -46,4 +46,23 @@ b = c
 console.log("O novo valor de a é", a) // O novo valor de a é 25
 console.log("O novo valor de b é", b) // O novo valor de b é 10
 
+//Desafio
+
+
+let numeroUm = prompt("Digite o primeiro numero")
+let numeroDois = prompt("Digite o segundo número") //a variavel vai receber o valor que o usuário digitar
+
+let numero11 = Number(numeroUm)
+let numero22 = Number(numeroDois)
+let somaAdicao = numero11 + numero22
+
+let somaMultiplicacao = Number(numeroUm * numeroDois);
+
+console.log("o primeiro número somado ao segundo número é", somaAdicao);
+
+console.log("o primeiro número multiplicado ao segundo é", somaMultiplicacao);
+
+//console.log(typeof numeroUm,numeroDois) // As respostas da primeira parte são 2 strings pois o prompt retorna string, preciso converter para número.
+//para somar  os numeros foi criado outras variaveis chamara numero11 e numero22 foi atribuido number pois eram string uma nova variavel chamada somaAdicao somou a duas 
+//para multiplicar foi criado a variavel let somaMultiplicacao e atribuido o Number para fica numero inteiro multiplicar com o * as duas variaveis numeroUm e numeroDois
 

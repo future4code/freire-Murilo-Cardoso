@@ -1,6 +1,12 @@
-//1- 10, 5
-//2- 10,10,10
-//3- horas, salarioHoras
+// 1 - Exercícios de interpretação de código
+
+//1.- 10, 5
+//2.- 10,10,10
+//3.- horas, salarioHoras
+
+//2 - Exercícios de escrita de código
+
+//1.Xonstrua um programa, seguindo os seguintes passos:
 
 //const nome 
 //let idade
@@ -15,6 +21,8 @@
 //então comentei para ignorar o código e abri novas variaveis com prompt para perguntar
 //console.log("Olá", nome, "você tem", idade);
 
+//2.Escreva um programa que faça 3 perguntas de Sim ou Não
+
 //let roupaCor = ("Você está usando roupa azul?")
 //let meiaLonga = ("Você está usando meia longa?")
 //let camisetaCurta = ("Você está usando camiseta curta?")
@@ -27,6 +35,7 @@
 //console.log(meiaLonga, resMeiaLonga)
 //console.log(camisetaCurta, resCamisetaCurta)
 
+// 3.Suponha que temos duas variáveis a e b, c
 
 let a = 10
 let b = 25

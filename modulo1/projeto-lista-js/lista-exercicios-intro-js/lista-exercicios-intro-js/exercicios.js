@@ -138,17 +138,37 @@ function checaIgualdadeDesconsiderandoCase(string1, string2) {
 // EXERCÍCIO 13
 function checaRenovacaoRG() {
   // implemente sua lógica aqui
-  
-}
+  anoAtual = Number(prompt("Em que ano estamos?"))
+  anoNascimento = Number(prompt("Em que ano você nasceu?"))
+  anoCarteira = Number(prompt("Em que ano sua carteira foi emitida?"))
+  let idade = anoAtual - anoNascimento
+  let idadeCarteira = anoAtual - anoCarteira
+  let caso1 = (idade <= 20) && (idadeCarteira >= 5)
+  let caso2 = ((idade > 20) && (idade <=50)) && (idadeCarteira >= 10)
+  let caso3 = (idade > 50) && (idadeCarteira > 15)
+  let renovacao = caso1 || caso2 || caso3
+ return console.log(renovacao)
+ 
+ }
+ 
+ //checaRenovacaoRG()
+
+
 
 // EXERCÍCIO 14
-function checaAnoBissexto(ano) {
+function checaAnoBissexto(ano)
   // implemente sua lógica aqui
-
+  function checaAnoBissexto(ano) {
+    return (ano % 400) === 0  || ((ano % 4 === 0 ) && (ano % 100 != 0))
 }
 
 // EXERCÍCIO 15
-function checaValidadeInscricaoLabenu() {
+function checaValidadeInscricaoLabenu()
   // implemente sua lógica aqui
-
+  function checaValidadeInscricaoLabenu() {
+    let maiorIdade = prompt('Você tem mais de 18 anos?') == 'sim'
+    let ensinoMedio = prompt('Você possui ensino médio completo?') == 'sim'
+    let disponibilidade = prompt('Você possui disponibilidade exclusiva durante os horários do curso?') == 'sim'
+  
+    return  console.log(maiorIdade && ensinoMedio && disponibilidade)
 }

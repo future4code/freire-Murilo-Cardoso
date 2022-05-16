@@ -133,22 +133,22 @@ const pessoa = {
         nome: "Banana",
         disponibiliade: true
     }
-    function sacolao(frutaUm, frutaDois, frutaTres){
-        let compra1 = carrinho.push(frutaUm.nome, frutaDois.nome, frutaTres.nome);
-        return sacolao
-    }
+    
+    carrinho.push (frutaUm)
+    carrinho.push (frutaDois)
+    carrinho.push (frutaTres)
+
+    console.log(carrinho)
+    
+    //function sacolao(frutaUm, frutaDois, frutaTres){
+        //let compra1 = carrinho.push(frutaUm.nome, frutaDois.nome, frutaTres.nome);
+        //return sacolao  
+    
+    
+    
     //sacolao()
-    console.log(carrinho)   
+     //sacolao(carrinho)
     
 
-    /*     function sacolao(frutaUm, frutaDois, frutaTres){
-        let compra1 = carrinho.push(frutaUm.nome, frutaDois.nome, frutaTres.nome)
-        let compra2 = carrinho.push(frutaDois.nome)
-        let compra3 = carrinho.push(frutaTres.nome)
 
-        const compraFinal = (compra1, compra2, compra3)
-
-            return carrinho 
-
-    }
-    console.log(carrinho) */
+    //console.log(carrinho) */

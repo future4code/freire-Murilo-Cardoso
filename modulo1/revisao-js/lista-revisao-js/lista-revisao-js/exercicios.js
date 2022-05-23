@@ -10,18 +10,24 @@ function retornaTamanhoArray(array) {
 
 // EXERCÍCIO 02
 function retornaArrayInvertido(array) {
-  
+  return array.reverse()
 }
 
 // EXERCÍCIO 03
 function retornaArrayOrdenado(array) {
-  
+    return array.sort((a, b) => a-b) ;
 }
 
 // EXERCÍCIO 04
 function retornaNumerosPares(array) {
-  
-}
+    let listaDeNumerosPares = []
+    for (let i = 0; i < array.length; i++) { 
+    if (array[i] % 2 === 0) {
+            listaDeNumerosPares.push(array[i])
+        }
+    }
+    return listaDeNumerosPares
+} 
 
 // EXERCÍCIO 05
 function retornaNumerosParesElevadosADois(array) {

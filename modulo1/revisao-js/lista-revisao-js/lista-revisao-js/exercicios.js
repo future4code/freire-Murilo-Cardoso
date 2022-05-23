@@ -32,11 +32,13 @@ function retornaNumerosPares(array) {
 // EXERCÍCIO 05
 function retornaNumerosParesElevadosADois(array) {
  
+    //return Math.pow(null, array);
+
 }
 
 // EXERCÍCIO 06
 function retornaMaiorNumero(array) {
-  
+    return Math.max.apply(null, array);
 }
 
 // EXERCÍCIO 07

@@ -31,7 +31,8 @@ function retornaNumerosPares(array) {
 
 // EXERCÍCIO 05
 function retornaNumerosParesElevadosADois(array) {
- 
+ let max = Math.max(array)
+    return max
     //return Math.pow(null, array);
 
 }

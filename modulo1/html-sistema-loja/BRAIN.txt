@@ -1,0 +1,49 @@
+Salario fixo R$ 2000,00 
+vendedor/comissão = R$ 100 + 5% do valor do carro.
+
+salarioMes = 2000
+comissaoVenda = 100.00 + 5%
+
+return calculaSalario
+
+
+Entradas:
+
+qtdeCarrosVendidos: 3
+valorTotalVendas: 130000
+Saídas:
+
+Esperada: 8800
+Real:
+
+
+
+.05 = 5%
+
+let comisassaoPorVenda = (qtdeCarrosVendidos * 100) + (valorTotalVenda*0.05)
+let salarioFinal = comissaoPorVenda + 2000
+return salarioFinal
+
+
+let comisassaoPorVenda = (qtdeCarrosVendidos * 100) + valorTotalVenda * 0.05
+let salarioFinal = comissaoPorVenda + 2000
+return calculaSalario
+
+
+
+const valorPorCarroVendido = valorTotalVenda / qtdeCarrosVendidos;
+	const salarioBase = 2000;
+	
+	if(qtdeCarrosVendidos !==0){
+	const bonusFixo = 100;
+	const bonusMaleavel = (valorPorCarroVendido * 0.05);
+	const bonusPorCarro = (bonusFixo + bonusMaleavel) * qtdeCarrosVendidos;
+
+	return salarioBase + bonusPorCarro;
+} else {
+	return salarioBase
+}
+
+
+
+

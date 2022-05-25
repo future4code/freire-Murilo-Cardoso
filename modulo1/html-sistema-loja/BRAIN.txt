@@ -1,15 +1,15 @@
-Salario fixo R$ 2000,00 
+Salario fixo R$ 2000 
 vendedor/comissão = R$ 100 + 5% do valor do carro.
 
 salarioMes = 2000
-comissaoVenda = 100.00 + 5%
+comissaoVenda = 100.00 + 0.05%
 
 return calculaSalario
 
-
+le
 Entradas:
 
-qtdeCarrosVendidos: 3
+qtdeCarrosVendidos: 3 * 100 = 300
 valorTotalVendas: 130000
 Saídas:
 
@@ -47,3 +47,46 @@ const valorPorCarroVendido = valorTotalVenda / qtdeCarrosVendidos;
 
 
 
+let salario = 2000
+let comissaoPorVendaPorVenda = qtdeCarrosVendidos * 100
+let bonusExtraComissao = valorTotalVenda * 0.05
+let totalComissao = comissaoPorVenda + bonusExtraComissao
+let salarioFinal = salario + totalComissao
+
+  if(qtdeCarrosVendidos === 0){
+    return salario
+  } else {
+    return salarioFinal
+  }
+  return salario
+}
+
+
+let salario = 2000
+let comissaoPorVenda = qtdeCarrosVendidos * 100
+let bonusExtraComissao = valorTotalVendas * 0.05
+let totalComissao = comissaoPorVenda + bonusExtraComissao
+let salarioFinal = salario + totalComissao
+
+  if(qtdeCarrosVendidos === 0){
+    return salario
+  } else {
+    return salarioFinal
+  }
+  return salario
+
+
+-
+
+function calculaPrecoTotal(quantidade) {
+let maças = 1.30
+let maçasDuzia = 1
+let compraDuzia = quantidade * maçasDuzia
+let compranormal = quantidade * maças
+  if(quantidade >= 12){
+  return compraDuzia
+} else {
+  return  compranormal
+}
+return calculaPrecoTotal
+}

@@ -82,6 +82,13 @@ div img {
 #container-de-descricao>ol {
     padding: 15px 0px;
 }
+#container-de-descricao>p {
+    position: relative;
+    margin-top: 30px;
+    display: inline-block;
+    padding: 15px 0px;
+    
+}
 
 #container-para-comprar {
     background-color: #e7eb90;
@@ -153,12 +160,13 @@ h3{
 .container li{
     position: relative; 
     bottom: -75px;
+    left: -80px
 }
 .container p{
     position: relative;
-    bottom: -75px;
+    bottom: -30px;
     text-align: center;
-    left: -2px    
+    left: -90px    
 }
 .tabela-compra{
     position: relative;
@@ -173,4 +181,8 @@ h3{
 .botao-compra-produtos:active {
     color: #0895e7;
     
+}
+.lista-numerada{
+    display: inline-block;
+    margin-bottom: 10px;
 }

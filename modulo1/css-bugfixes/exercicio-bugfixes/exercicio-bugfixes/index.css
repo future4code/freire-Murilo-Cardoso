@@ -35,6 +35,8 @@ img {
 }
 
 div>p:first-child {
+    position: relative;
+    right: 10px;
     display: inline;
 }
 
@@ -147,7 +149,7 @@ td button {
     border-radius: 5px;
     font-size: 10px;
     color: black;
-    right: -632px;
+    right: -900px;
     bottom: -90px;
 }
 

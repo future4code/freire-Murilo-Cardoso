@@ -1,16 +1,17 @@
 h1 {
-    color: blueviolet;
+    color: rgb(255, 255, 255);
 
 }
 body{
-    height: 2000px;
+    height: 120vh;
     background-color: #449a41;
 }
 .icon {
     height: 150;
 }
 header{
-    width: 100;
+    position: fixed;
+    width: 100%;
     background-color: #c980af;
     display: flex;
     justify-content:space-around;
@@ -27,8 +28,13 @@ header{
     display: flex;
     align-items: center;
 }
-.logo-texto{
-    margin-left: 20px;
+.logo{
+    margin-left: 0px;
+}
+.logo img{
+    margin: auto;
+    width: 100px;
+    height: 100px;
 }
 .menu li{
     display: inline-block;
@@ -36,11 +42,18 @@ header{
     font-size: 10px;
 }
 .menu li a{
-    font-size: 24px;
+    font-size: 20px;
     text-decoration: none;
     color: #ffffff;
     text-transform: uppercase;
     padding: 10px 15px;
+    
+}
+.menu ul :hover{
+    color: #f6df13;
+}
+.menu ul :active{
+    color: aqua;
 }
 *{
     margin: 0;
@@ -48,7 +61,7 @@ header{
     box-sizing: border-box;
 }
 footer{
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
     right: 0%;
@@ -84,18 +97,18 @@ footer{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 1rem 0 3rem 0;
+    margin: rem 50 rem 0;
 }
 .MDsocial li {
-    margin: 0 10px;
+    margin: 0 20px;
 }
-
 .MDsocial a {
  text-decoration: none;
  color: #ffffff;
 }
 .MDsocial a i{
  font-size: 1.1rem;
+ margin: 3px;
 }
 .MDsocial a:hover i{
     color: aqua;
@@ -116,4 +129,9 @@ text-align: center;
     text-transform: uppercase;
     opacity: .4;
     font-weight: 200;
+}
+.tituloHome{
+margin: auto;
+color: #ffffff;
+text-align: center;
 }

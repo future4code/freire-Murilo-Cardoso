@@ -1,0 +1,127 @@
+
+/* <!-- cabelalho-botão -->
+<!-- mdsocial -->
+<!-- cabedalho -->
+<!-- tituloHome -->
+<!-- menu --> */
+h1 {
+    color: rgb(255, 255, 255);
+ 
+}
+body{
+    height: 100vh;
+    background-color: #112115;
+}
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+.fotoId{
+    position: fixed;
+    right: 20px;
+}
+header{
+    position: fixed;
+    width: 100%;
+    background-color: #2AC851;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.menu li{
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 13px;
+}
+.menu li a{
+    font-size: 20px;
+    text-decoration: none;
+    color: #ffffff;
+    text-transform: uppercase;
+    padding: 10px 30px;
+   
+}
+.menu ul :hover{
+    color: #114F20;
+}
+.menu ul :active{
+    color: #82FFA1;
+}
+*{
+    margin: 0;
+    padding: 0%;
+    box-sizing: border-box;
+}
+footer{
+    position: fixed;
+    bottom: 0px;
+    background-color: #0A140D;
+    height: auto;
+    width: 100vw;
+    padding-top: 40px;
+    color: #ffffff;
+}
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.footer h3{
+    font-size: 1.3rem;
+    font-weight: 300;
+    text-transform: capitalize;
+    line-height: 3rem;
+}
+.footer p{
+    max-width: 700px;
+    margin: 9px auto;
+    line-height: 20px;
+}
+.MDsocial{
+    list-style: noene;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: rem 50 rem 0;
+}
+.MDsocial li {
+    margin: 0 20px;
+}
+.MDsocial a {
+ text-decoration: none;
+ color: #ffffff;
+}
+.MDsocial a i{
+ font-size: 1.1rem;
+ margin: 3px;
+}
+.MDsocial a:hover i{
+    color:#82FFA1;
+}
+
+.footer-copy{
+background: #0A140D;
+width: 100 pw;
+padding: 20px 0;
+text-align: center;
+}
+.footer-copy p{
+    font-size: 14px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+}
+.footer-copy span{
+    text-transform: uppercase;
+    opacity: .4;
+    font-weight: 200;
+}
+.tituloHome{
+margin: auto;
+color: #ffffff;
+text-align: center;
+}
+

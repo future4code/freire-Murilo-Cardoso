@@ -15,10 +15,17 @@ body{
 *{
     font-family: 'Poppins', sans-serif;
 }
+main{
+    position:relative;
+    height: 400px;
+    width: 400px;
+}  
 
-.fotoId{
-    position: fixed;
-    right: 20px;
+.fotoId2{
+    position:absolute;
+    right: -300px;
+    bottom: -250px;
+    text-align: center;
 }
 header{
     position: fixed;

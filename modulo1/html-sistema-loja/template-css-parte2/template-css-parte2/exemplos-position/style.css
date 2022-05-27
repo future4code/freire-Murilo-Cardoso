@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+}
+body {
+  height: 150vh;
+}
+
+.magenta {
+  background-color: magenta;
+}
+.purple {
+  background-color: purple;
+}
+.black-section-pai {
+  background-color: black;
+  color: white;
+}
+.green-filho-do-section {
+  background-color: green;
+  
+}
+

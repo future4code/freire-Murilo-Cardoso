@@ -1,0 +1,137 @@
+h1 {
+    color: rgb(255, 255, 255);
+
+}
+body{
+    height: 120vh;
+    background-color: #449a41;
+}
+.icon {
+    height: 150;
+}
+header{
+    position: fixed;
+    width: 100%;
+    background-color: #c980af;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    padding: 20px 0;
+}
+.logo-imagem{
+    width: 50;
+    height: 50;
+    background-color: black;
+    border-radius: 25px;
+}
+.container-logo{
+    display: flex;
+    align-items: center;
+}
+.logo{
+    margin-left: 0px;
+}
+.logo img{
+    margin: auto;
+    width: 100px;
+    height: 100px;
+}
+.menu li{
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 10px;
+}
+.menu li a{
+    font-size: 20px;
+    text-decoration: none;
+    color: #ffffff;
+    text-transform: uppercase;
+    padding: 10px 15px;
+    
+}
+.menu ul :hover{
+    color: #f6df13;
+}
+.menu ul :active{
+    color: aqua;
+}
+*{
+    margin: 0;
+    padding: 0%;
+    box-sizing: border-box;
+}
+footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0%;
+    background-color: #c980af;
+    height: auto;
+    width: 100vw;
+    font-family: "open Sans";
+    padding-top: 40px;
+    color: #ffffff;
+}
+.cabeçalho{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.cabeçalho h3{
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 3rem;
+
+}
+.cabeçalho p{
+    max-width: 500px;
+    margin: 10px auto;
+    line-height: 28px;
+}
+.MDsocial{
+    list-style: noene;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: rem 50 rem 0;
+}
+.MDsocial li {
+    margin: 0 20px;
+}
+.MDsocial a {
+ text-decoration: none;
+ color: #ffffff;
+}
+.MDsocial a i{
+ font-size: 1.1rem;
+ margin: 3px;
+}
+.MDsocial a:hover i{
+    color: aqua;
+}
+
+.cabeçalho-botão{
+background: #c980af;
+width: 100 pw;
+padding: 20px 0;
+text-align: center;
+}
+.cabeçalho-botão p{
+    font-size: 14px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+}
+.cabeçalho-botão span{
+    text-transform: uppercase;
+    opacity: .4;
+    font-weight: 200;
+}
+.tituloHome{
+margin: auto;
+color: #ffffff;
+text-align: center;
+}

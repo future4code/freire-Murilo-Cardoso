@@ -5,8 +5,13 @@
 <!-- tituloHome -->
 <!-- menu --> */
 h1 {
+    position: relative;
+    width: 600px;
     color: rgb(255, 255, 255);
- 
+    font-size: 50px;
+    left: 800px;
+    top: 230px;
+
 }
 body{
     height: 100vh;
@@ -15,12 +20,122 @@ body{
 *{
     font-family: 'Poppins', sans-serif;
 }
+
+.secCentral{
+    height: 300px;
+    width: 300px;
+}
 main{
     position:relative;
     height: 400px;
     width: 400px;
 }  
+.maincontato{
+    height: 800px;
+}
+.tituloContato{
+    margin-left: 5%;   
+}
+fieldset{
+    border: 0;
+}
+input, textarea, button{
+    border-radius: 5px;
+}
 
+.campoContato{
+    position: relative;
+    margin-bottom: 1em;
+    
+}
+.campoContato label{
+    margin-bottom: 0.2em;
+    color: #ffffff;
+    display: block;
+    font-style: oblique;
+
+}
+fieldset.grupoContato .campoContato{
+    float: left;
+    margin-right: 1em;
+}
+.campoContato input[type="text"], .campoContato input [type="email"] .campoContato textarea{
+    padding: 0.2em;
+    border: 1px solid #82FFA1;
+    box-shadow: 2px 2px 2px #112115;
+    display: block
+}
+.campoContato input:focus, .campoContato textarea:focus{
+    background: #ffffff;
+}
+.divCentral{
+    position: absolute;
+    width: 300px;
+    height: 400px;
+    display: inline;
+}
+.divfomulario{
+    position: relative;
+    left: 822px;
+    bottom: -315px;
+    
+}
+
+.btnContato{
+    font-size: 1.2em;
+    background: #2ac851;
+    border: 0;
+    margin-bottom: 1em;
+    color: #ffffff;
+    padding: 0.2em 0.6em;
+    box-shadow: 2px 2px 2px #82FFA1;
+    text-shadow: 1px 1px 1px #112115;
+    position: absolute;
+    top: 110%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+.btnContato:hover{
+    background: #82FFA1;
+    box-shadow: #114F20;
+    text-shadow: none;
+}
+.divbio{
+    position: relative;
+    height: 300px;
+    width: 300px;
+    border-color: #114F20;
+}
+.textoBio{
+    width: 662px;
+    padding: 30px;
+    position: absolute;
+    color: #ffffff;
+    left: 773px;
+    font-size: 40px;
+    bottom: 53px;
+    font-style: oblique
+}
+.btn {
+    position: absolute;
+    padding: 10px;
+    color: #ffffff;
+    background: #2AC851;
+    border: 1px solid #0A140D;
+    border-radius: 6px;
+    text-align: center;
+    user-select: none;
+    cursor: pointer;
+    box-shadow: 2px 2px 2px #0A140D;
+    left: 1500px;
+    width: 200px;
+    font-size: 16px;
+}
+.btn:hover {
+    background: #82FFA1;
+    transition: 0.3s;
+}
 .fotoId2{
     position:absolute;
     right: -300px;

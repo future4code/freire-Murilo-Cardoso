@@ -39,6 +39,12 @@ body{
     top: 0px;
     left: 166px
 }
+.divCentralProjeto h3 {
+        position: relative;
+        color: #ffffff;
+        font-style: oblique;
+        margin-left: 300px;
+    }
 .divCentralProjeto img{
     position: relative;
     left: 300px;
@@ -308,4 +314,18 @@ margin: auto;
 color: #ffffff;
 text-align: center;
 }
-
+.imgfotografia{
+    margin-right: 10px;
+}
+.imgps{
+    margin-right: 10px;
+}
+.imai{
+    margin-right: 10px;
+}
+.imgsenac{
+    margin-right: 10px;
+}
+.imgudemy{
+    margin-right: 10px;
+}

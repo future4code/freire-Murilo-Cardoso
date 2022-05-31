@@ -48,13 +48,20 @@ header{
     grid-template-rows: 210px 210px;
     row-gap: 0px;
     padding-top: 10px;
+    
   }
 .main div{
-    display: block;
+    display: flex;
     height: 200px;
     width: 200px;
     background-color: #6a22c3;
     border: 1px solid red;
+    align-items: end;
+    justify-content: center;
+
+  }
+  .main p{
+    
   }
 footer{
     background-color: blueviolet;
@@ -68,3 +75,11 @@ footer{
     height: 60px;
     padding: 15px;
   }
+.imagem1{
+
+
+  }
+.video{
+
+
+}

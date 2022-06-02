@@ -9,35 +9,49 @@
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;1,100;1,200&family=Roboto:wght@100&display=swap');</style>
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-    <title>Murilo Abreu</title>
+    <title>Contato</title>
 </head>
 <body>
     <header>
         </div> <!-- Container-logo -->
         <div class="menu">
             <ul>
-                <li><a href="#">Início</a></li> <!-- incluir link das pages -->
+                <li><a href="index.html">Início</a></li> <!-- incluir link das pages -->
                 <li><a href="projetos.html">Projetos</a></li>
-                <li><a href="contato.html">Contato</a></li>
+                <li><a href="#">Contato</a></li>
                 <li><a href="habilidades.html">Habilidades</a></li>
             </ul>
         </div> <!-- MENU -->
     </header>
-    <main>
-        <h1>Seja bem-vindo ao meu Portfólio!</h1>
-        <div >
-            <img class="fotoId2" src="img/murilox400.jpg" alt = "foto Murilo Abreu">
-        </div>
+    <main class="maincontato">
+        <div>
+            <h1 class="tituloContato">Entre em contato:</h1>
+            
+                <form class="divfomulario">
+                    <fieldset class="grupoContato">
+                    <div class="campoContato">
+                        <label for="nome"><strong>Nome</strong></label>
+                        <input type="text" name="nome" id="nome">
+                        <div class="campoContato">
+                            <label for="email">
+                            <strong>Email</strong>
+                            </label>
+                            <input type="email" name="email" id="email">
+                        </div>
+                        <div class="campoContato">
+                        <br>
+                        <label for="mensagem">
+                            <strong>Envie sua mensagem no campo abaixo:</strong>
+                        </label>
+                        <textarea row="6" style="width: 26em" id="mensagem" name="mensagem"></textarea>
+                        </div>
+                        <button class="btnContato" type="submit">Enviar</button>
+                    </div>
+                    </fieldset>
+                    </div>    
+                </form>
+        </div>        
     </main>
-    <div>
-        <div class="btn"><a href="habilidades.html">Saiba mais</a></div>
-        <div class="divbio">
-            <p class="textoBio">
-            Olá meu nome é Murilo, tenho 27 anos e sou estudande de programação.
-            </p>
-        </div>
-    </div>
-    </div>
     <footer>
         <div class="footer">
             <h3>Murilo Abreu</h3>
@@ -56,9 +70,3 @@
     </footer>
 </body>
 </html>
-
-<!-- cabelalho-botão -->
-<!-- mdsocial -->
-<!-- cabedalho -->
-<!-- tituloHome -->
-<!-- menu -->

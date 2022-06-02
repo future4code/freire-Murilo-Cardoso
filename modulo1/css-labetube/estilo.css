@@ -1,10 +1,16 @@
 *{
-    margin: 0%;
-    padding: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 header{
-    border: 1px black
+  display: flex;
+  background-color: blueviolet
+  height: 10vh;
+  justify-content: space-between;
+  align-items: center;
+}
+body{
+  color: white 
 }
 .cabeçalho{
   align-items: center;
@@ -45,84 +51,87 @@ header{
     width:260px;
   }
 .main{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  background-color: rgb(255, 255, 255);
+  gap: 10px;
+  padding: 30px;
+  margin: 60px 20px;
+  }
+  .main div {
     display: grid;
-    width: 100vw;
-    height: 600px;
-    background-color: aqua;
-    grid-template-columns: 210px 210px 210px 210px;
-    grid-template-rows: 210px 210px;
-    row-gap: 0px;
-    padding-top: 10px;
-  }
-.main div{
-    display: flex;
-    height: 200px;
     width: 200px;
-    background-color: #6a22c3;
-    border: 1px solid red;
-    align-items: end;
-    justify-content: center;
+    height: 200px;
+  }
 
-  }
-  .main p{
-    display: flex;
-    position: relative;
-    justify-content: center;
-  }
 footer{
-    background-color: blueviolet;
-    display: flex;
-    justify-content: flex-end;
-    
-  }
+  background-color: blueviolet;
+  height: 50px;
+  width: 100vw;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  height: 1fr;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+}
 .footerDiv{
     display: flex;
     width: 100vw;
     height: 60px;
     padding: 15px;
+    align-items: center;
+    justify-content: center;
   }
-.video{
-    position: relative;
-    width: 200px;
-    height: 200px;
-
+div{
+  display: block;
 }
-.mainVideo{
+div a{
+  color: black;
+  text-align: center;
+}
+div a video {
+  display: flex;
+  width: 100%;
+  height: 90%;
+}
+.bloco{ 
   display: grid;
-  width: 100vw;
-  height: 600px;
-  background-color: aqua;
+  grid-template-rows: 4fr 1fr;
+  box-shadow: 5px 5px 5px silver;
+  text-align: center;
+  align-items: center;
+  color: black;
+  font-size: 15px;
 }
-
+.bloco p {
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  text-decoration: none;
+}
+.bloco a{
+  text-decoration: none;
+}
+video{
+  object-fit: contain;
+}
 .tituloVideo{
   position: relative;
   top: 40px;
   font-style: oblique;
 }
 .tituloVideo h1{
+  color: black;
   position: relative;
   left: 15px;
 }
-.ImagemVideo{
-  display: flex;
-  position: relative;
-  width: 250px;
-  height: 200px;
-  bottom: 28px;
-  justify-content: center;
-}
-.bloco1 a{
-  position: fixed;
-  width: 200px;
-  height: 200px
-
-}
-.videoplay{
+.videoplay {
   position: relative;
   left: 10px;
-}
-.bloco2 a{
-  position: fixed;
-  width: 200px;
-  height: 200px
 }

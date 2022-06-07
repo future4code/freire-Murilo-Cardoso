@@ -1,0 +1,10 @@
+~~~Javascript
+
+const variasTarefas = tarefas.filter((item) =>{
+	return item.status === "done" 
+})
+	const tarefasFeitas = variasTarefas.map((nome) =>{
+	return nome.titulo
+})
+  return tarefasFeitas
+}

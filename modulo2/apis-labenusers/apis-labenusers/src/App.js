@@ -2,6 +2,7 @@ import './App.css';
 import React from 'react';
 import Detalhes from './page/Detalhes';
 import Home from './page/Home'
+import axios from "axios";
 
 export default class App extends React.Component {
   state = {

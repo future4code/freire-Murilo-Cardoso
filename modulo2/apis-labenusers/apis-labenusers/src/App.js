@@ -1,38 +1,29 @@
 import './App.css';
 import React from 'react';
-import Detalhes from './components/Detalhes';
+import Detalhes from './page/Detalhes';
+import Home from './page/Home'
 
 export default class App extends React.Component {
   state = {
-    trocarTela: false
+    trocarTela: true
   };
-  trocandoTela = () => {
-    this.setState({ trocaTela: true });
+  
+  cadastrar = () => {
+    this.setState({trocarTela:true});
   };
-  voltandoTela = () =>{
-    this.setState({trocaTela: false});
+  verLista = () =>{
+    this.setState({trocarTela:false});
   };
+
   render() {  
-    const onClickBotao = () => {
-      alert('Você trocou de tela')
-    }
-    let detalhes;
+    let pagina;
     if (this.state.trocarTela) {
-      detalhes = <App onClickLogout={this.voltandoTela} />;
+      pagina = <Home onClickverLista={this.verLista}/>;
     } else {
-      detalhes = <Detalhes onClickLogin={this.trocandoTela} />;
+      pagina = <Detalhes onClickCadastrar={this.cadastrar}/>;
     }
-    return <div>{detalhes}</div>;
-    }
+    return(
+    <div>{pagina}</div>
+    )
   }
-  return (
-    <div>
-      <h1>Tela Inicial</h1>
-      <button onClick={onClickBotao}>Trocar de tela</button>
-      <input></input>
-      <input></input>
-      <button>Criar usuário</button>
-    </div>
-  )
-}
-}
+  }

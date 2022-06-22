@@ -4,7 +4,7 @@ import styled from "styled-components"
 
 
 const CardUsuario = styled.div`
-  border: 1px solid black;
+  border: 2px solid white;
   padding: 10px;
   margin: 10px;
   width: 300px;
@@ -58,7 +58,7 @@ export default class TelaListaUsuarios extends React.Component {
       return ( 
         <CardUsuario key={user.id}>
           {user.name}
-          <button onClick={() => this.deletarUsuario(user.id)}>-</button>
+          <button className="botaoDeletar" onClick={() => this.deletarUsuario(user.id)}>X</button>
         </CardUsuario>
         )
     })
@@ -66,9 +66,15 @@ export default class TelaListaUsuarios extends React.Component {
 
     return(
       <div>
-        <button onClick={this.props.irParaCadastro}>Troca Tela</button>
-        <h2>Lista de Usuários</h2> 
-        {listaUsuarios}
+
+        <div className="containerUsuario">
+          <h2>Lista de Usuários</h2> 
+          {listaUsuarios}
+          <div>
+            <input className="botaoPesquisar" placeholder="pesquisar"></input>
+          </div>
+          <button className="botaoTroca" onClick={this.props.irParaCadastro}>Voltar</button>
+        </div>
       </div>
     )
   }

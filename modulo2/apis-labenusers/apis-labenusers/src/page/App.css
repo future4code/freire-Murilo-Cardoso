@@ -1,0 +1,81 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    padding: 20px;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px;
+    border: none;
+    height: 33vh;
+    background-color: blueviolet;
+}
+
+.botaoTroca {
+    margin: 0px auto;
+    background-color: rgb(60, 14, 87);
+    z-index: 1;
+    position: relative;
+    font-size: inherit;
+    font-family: inherit;
+    color: white;
+    padding: 0.5em 1em;
+    outline: none;
+    border: none;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 10px;
+    top: 20px
+}
+.botaoCadastra {
+    margin: 0px auto;
+    background-color: rgb(60, 14, 87);
+    z-index: 1;
+    position: relative;
+    font-size: inherit;
+    font-family: inherit;
+    color: white;
+    padding: 0.5em 1em;
+    outline: none;
+    border: none;
+    overflow: hidden;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    position: relative;
+    top: 10px;
+    border-radius: 10px;
+}
+.containerUsuario {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    padding: 20px;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px;
+    border: none;
+    height: 80vh;
+    background-color: blueviolet;
+}
+.botaoDeletar{
+    background-color: rgb(232, 1, 1);
+    color: aliceblue;
+    border-radius: 40px;
+}
+.botaoPesquisar{
+    margin: 0px auto;
+    background-color: rgb(60, 14, 87);
+    z-index: 1;
+    position: relative;
+    font-size: inherit;
+    font-family: inherit;
+    color: white;
+    padding: 0.5em 1em;
+    outline: none;
+    border: none;
+    overflow: hidden;
+    border-radius: 10px;
+    position: relative;
+    top: 10px;
+}

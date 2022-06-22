@@ -1,6 +1,8 @@
 import React from 'react';
 import TelaListaUsuarios from './page/TelaListaUsuarios';
 import TelaCadastro from './page/TelaCadastro';
+import GlobalStyle from "./components/global";
+import './page/App.css'
 
 export default class App extends React.Component {
   state = {
@@ -29,7 +31,8 @@ export default class App extends React.Component {
 
   render(){
     return (
-      <div>
+      <div className='AreaHeader'>
+        <GlobalStyle/>
         {this.escolheTela()}
       </div>
     )

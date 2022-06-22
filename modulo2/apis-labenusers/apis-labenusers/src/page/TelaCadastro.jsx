@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import styled from "styled-components"
 
 export default class TelaCadastro extends React.Component {
   state = {
@@ -44,19 +45,21 @@ export default class TelaCadastro extends React.Component {
   render(){
     return(
       <div>
-        <button onClick={this.props.irParaLista}>Trocar Tela</button>
-        <h2>Cadastro</h2>
-        <input 
-          placeholder={"nome"}        
-          value={this.state.nome}  
-          onChange={this.handleNome}
-        />
-        <input
-         placeholder={"E-mail"}
-         value={this.state.email}
-         onChange={this.handleEmail}
-        />
-        <button onClick={this.fazerCadastro}>Cadastrar</button>
+        <button className="botaoTroca" onClick={this.props.irParaLista}>Ir para lista de usuários</button>
+        <div className="container">
+          <h2>Cadastro</h2>
+          <input 
+            placeholder={"nome"}        
+            value={this.state.nome}  
+            onChange={this.handleNome}
+          />
+          <input
+          placeholder={"E-mail"}
+          value={this.state.email}
+          onChange={this.handleEmail}
+          />
+          <button className="botaoCadastra" onClick={this.fazerCadastro}>Cadastrar</button>
+        </div>  
       </div>
     )
   }

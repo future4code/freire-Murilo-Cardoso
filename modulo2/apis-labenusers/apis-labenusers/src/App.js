@@ -1,30 +1,37 @@
-import './App.css';
 import React from 'react';
-import Detalhes from './page/Detalhes';
-import Home from './page/Home'
-import axios from "axios";
+import TelaListaUsuarios from './page/TelaListaUsuarios';
+import TelaCadastro from './page/TelaCadastro';
 
 export default class App extends React.Component {
   state = {
-    trocarTela: true
-  };
-  
-  cadastrar = () => {
-    this.setState({trocarTela:true});
-  };
-  verLista = () =>{
-    this.setState({trocarTela:false});
-  };
+    telaAtual: "cadastro"
+  }
 
-  render() {  
-    let pagina;
-    if (this.state.trocarTela) {
-      pagina = <Home onClickverLista={this.verLista}/>;
-    } else {
-      pagina = <Detalhes onClickCadastrar={this.cadastrar}/>;
+  escolheTela = () => {
+    switch (this.state.telaAtual) {
+      case "cadastro":
+        return <TelaCadastro irParaLista={this.irParaLista}/>
+      case "lista":
+        return <TelaListaUsuarios irParaCadastro={this.irParaCadastro}/>
+        default:
+          return <div>Erro! Página não encontrada! </div>
     }
-    return(
-    <div>{pagina}</div>
+  }
+
+  irParaCadastro = () => {
+    this.setState({telaAtual: "cadastro"})
+  }
+
+  irParaLista = () =>{
+    this.setState({telaAtual: "lista"})
+  }
+
+
+  render(){
+    return (
+      <div>
+        {this.escolheTela()}
+      </div>
     )
   }
-  }
+}

@@ -8,7 +8,7 @@ export default class Home extends React.Component {
         inputEmail: ""
     }
     onChangeInputNome = (event) => {
-      this.setState({ inputName: event.target.value });
+      this.setState({ inputNome: event.target.value });
     };
     onChangeInputEmail = (event) => {
       this.setState({ inputEmail: event.target.value });
@@ -16,37 +16,47 @@ export default class Home extends React.Component {
     
     criarListaUsuario = () => {
       const body = {
-        name: this.state.inputName,
+        name: this.state.inputNome,
         email: this.state.inputEmail
       };
+      const request = axios.post(
+        "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users",
+        body,
+        {
+          headers: {
+            Authorization: "murilo-abreu-freire"
+          }
+        }
+      );
+      request
+      .then((response)=>{
+        alert("Você cadastrou legal")
+        this.setState({nome:"", email:""})
+      })
+      .catch((error)=>{
+        alert("Não foi possivel cadastrar")
+      })
     }
 
-/*     const request = axios.post(
-      "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users",
-      body,
-      {
-        headers: {
-          Authorization: "murilo-abreu-freire"
-        }
-      }
-    ); */
+    
 
+      
     render() {
         return (
           <div> 
             <h1>Tela Inicial</h1>
-            <button onClick={this.props.onClickverLista}>trocar tela</button>
+            <button onClick={this.props.onClickverLista}>Trocar tela</button>
             <br></br>
             <input
-                value={this.state.inputName}
-                onChange={this.onChangeInput}
-                placeholder="Nome">
-            </input>
+                value={this.state.inputNome}
+                onChange={this.onChangeInputNome}
+                placeholder="Nome"/>
+            
             <input 
                 value={this.state.inputEmail}
-                onChange={this.onChangeInput}
-                placeholder="E-mail"></input>
-            <button>Criar usuário</button>
+                onChange={this.onChangeInputEmail}
+                placeholder="E-mail"/>
+            <button onClick={this.criarListaUsuario}>Criar usuário</button>
           </div>
         );
       }

@@ -1,7 +1,9 @@
 import React from "react";
-import TelaCadastro from "./pages/TelaCadastro";
-import TelaPlaylists from "./pages/TelaPlaylists";
-
+import Footer from "./components/Footer";
+import Cadastro from "./components/Cadastro";
+import Header from "./components/Header";
+import CriarPlaylists from "./components/CriarPlaylists";
+import TelaInicio from "./pages/TelaInicio"
 /* IMPORTACAO DE ARQUIVOS */
 
 
@@ -14,26 +16,44 @@ export default class App extends React.Component {
 escolheTela = () => {
   switch (this.state.telaAtual) {
     case "inicio":
-      return <TelaCadastro irPlaylists={this.irPlaylists}/>
+      return <TelaInicio />;
+    case "cadastro":
+      return <Cadastro irInicio={this.irInicio}/>;
     case "playlists":
-      return <TelaPlaylists irCadastro={this.irCadastro}/>
+      return <CriarPlaylists irInicio={this.irInicio}/>;
     default: 
-      return <div>Erro!</div>
+      return <TelaInicio/>;
     }
-  }
+  };
 
 irCadastro = () => {
-  this.setState({telaAtual: "inicio"})
+  this.setState({telaAtual: "cadastro"})
 }
   
 irPlaylists = () => {
   this.setState({telaAtual: "playlists"})
 }
 
+ irInicio = () => {
+  this.setState({TelaAtual: "inicio"})
+}
+
+mudaTela = (nomeTela) => {
+  this.setState({ telaAtual: nomeTela });
+};
 render(){
   return (
     <div>
-      {this.escolheTela()}
+      <div>
+        <Header></Header>
+      </div>
+        <button onClick={() => this.mudaTela("playlists")}>Playlists</button>
+        <button onClick={() => this.mudaTela("cadastro")}>Criar Playlists</button>
+        <button onClick={() => this.mudaTela("inicio")}>Inicio</button>
+        {this.escolheTela()}
+      <div>
+        <Footer></Footer>
+      </div>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 
-export default class TelaCadastro extends React.Component {
+export default class Cadastro extends React.Component {
     state = {
         playlist: "",
     }
@@ -29,11 +29,10 @@ export default class TelaCadastro extends React.Component {
             alert("Já existe uma playlist com esse nome!")
         });
     }
+
 render(){
     return (
         <div>
-            <button onClick={this.props.irPlaylists}>Playlists</button>
-            <h1>Labefy Music!</h1>
             <h3>Crie sua playlist!</h3>
             <input
                 placeholder={"digite o nome da playlist"}

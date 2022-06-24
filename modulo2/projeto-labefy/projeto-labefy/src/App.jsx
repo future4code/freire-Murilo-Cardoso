@@ -14,16 +14,16 @@ export default class App extends React.Component {
 escolheTela = () => {
   switch (this.state.telaAtual) {
     case "inicio":
-      return <TelaCadastro irCadastro={this.irCadastro}/>
+      return <TelaCadastro irPlaylists={this.irPlaylists}/>
     case "playlists":
-      return <TelaPlaylists irPlaylists={this.irPlaylists}/>
+      return <TelaPlaylists irCadastro={this.irCadastro}/>
     default: 
       return <div>Erro!</div>
     }
   }
 
 irCadastro = () => {
-  this.setState({telaAtual: "cadastro"})
+  this.setState({telaAtual: "inicio"})
 }
   
 irPlaylists = () => {

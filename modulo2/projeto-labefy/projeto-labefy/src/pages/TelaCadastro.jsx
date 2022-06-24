@@ -23,6 +23,7 @@ export default class TelaCadastro extends React.Component {
         })
         .then((res)=>{
             alert("Você cadastrou sua playlist com sucesso!")
+            this.setState({playlist: ""})
         })
         .catch((err)=>{
             alert("Já existe uma playlist com esse nome!")
@@ -31,7 +32,7 @@ export default class TelaCadastro extends React.Component {
 render(){
     return (
         <div>
-            <button onClick={this.props.irPlaylist}>Playlists</button>
+            <button onClick={this.props.irPlaylists}>Playlists</button>
             <h1>Labefy Music!</h1>
             <h3>Crie sua playlist!</h3>
             <input

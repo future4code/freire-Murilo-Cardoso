@@ -6,7 +6,7 @@ export default class TelaPlaylists extends React.Component {
     return (
       <div>
         <h2>Tela de Playlist</h2>
-        <button>Voltar</button>
+        <button onClick={this.props.irCadastro}>Voltar</button>
       </div>
     );
   }

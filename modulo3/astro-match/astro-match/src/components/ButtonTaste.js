@@ -1,3 +1,4 @@
+import axios from "axios";
 import React from "react";
 import styled from "styled-components";
 
@@ -12,10 +13,20 @@ const StyledButton = styled.div`
 `
 
 export default function ButtonTaste(props) {
+
+   const executeDislike = () => {
+    console.log("dislike")
+    }
+
+   const executeLike =  () => {
+    console.log("like")
+    axios
+    .post('https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:aluno/choose-person')
+    }
     return(
         <StyledButton>
-            <button>Dislike</button>
-            <button>Like</button>
+            <button onClick={executeDislike}>Dislike</button>
+            <button onClick={executeLike}>Like</button>
         </StyledButton>
     )
 }

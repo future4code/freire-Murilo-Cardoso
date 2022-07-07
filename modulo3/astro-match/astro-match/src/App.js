@@ -5,6 +5,7 @@ import ButtonTaste from './components/ButtonTaste';
 import Clear from './components/Clear';
 import styled from 'styled-components'
 
+
 const MainApp = styled.div`
     width: 400px;
     height: 600px;

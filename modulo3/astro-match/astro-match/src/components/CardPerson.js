@@ -18,6 +18,9 @@ box-shadow: 1px 2px 2px black;
 const Button = styled.button`
 display: inline;
 margin-bottom: 15px;
+border: none;
+background-color: transparent;
+size: 20px;
 `
 const Strong = styled.strong`
 font-size: 20px;
@@ -40,7 +43,10 @@ align-items: center;
 margin: 10px;
 gap: 10px;
 `
-
+const DivButton = styled.div`
+display: flex;
+justify-content: space-around;
+`
 export default function CardPerson() {
 
     const [perfilCard, setPerfilCard] = useState({});
@@ -79,14 +85,16 @@ export default function CardPerson() {
     return(
         <div>
             <CardPersonStyled>
-                    <Imagem src={perfilCard.photo} alt={perfilCard.photo_alt}/>
+                <Imagem src={perfilCard.photo}  alt={perfilCard.photo_alt}/>
                     <Div>
-                    <p><Strong>{perfilCard.name},</Strong></p>
-                    <Idade>{perfilCard.age} anos</Idade>
+                        <p><Strong>{perfilCard.name},</Strong></p>
+                        <Idade>{perfilCard.age} anos</Idade>
                     </Div>
                     <Biografia>{perfilCard.bio}</Biografia>
-                    <Button onClick={()=>{executeCard()}}><IoIosHeartDislike/></Button>
-                    <Button onClick={()=>{matchOk()}}><FcLike/></Button>
+                    <DivButton>
+                        <Button onClick={()=>{executeCard()}}><IoIosHeartDislike  size="50px"/></Button>
+                        <Button  onClick={()=>{matchOk()}}><FcLike size="50px"/></Button>
+                    </DivButton>
             </CardPersonStyled>       
         </div>
     )

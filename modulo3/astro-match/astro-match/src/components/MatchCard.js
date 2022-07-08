@@ -16,8 +16,26 @@ import {AiOutlineClear} from 'react-icons/ai'
     display: flex;
     height: 200px;
     width: 200px;
+    flex-direction: column;
+    `
+    const ImagemMatch = styled.img`
+    height: 50px;
+    width: 50px;
+    `
+    const DivMatchs = styled.div`
+    flex-direction: column;
+    display: flex;
     `
 
+    const ButtonClear = styled.div`
+    display: flex;
+    border: 1px solid black;
+    justify-content: center;
+    `
+    const DivButton = styled.div`
+    display: block;
+    height: 300´px;
+    `
 export default function MatchCard() {
 
     const [listMatch, setListMatch] = useState([])
@@ -38,7 +56,12 @@ export default function MatchCard() {
 }
     const todasMatch = listMatch.map((user) => {
         return(
-            <li key={user.id}><p>{user.name}</p><img src={user.photo} alt={user.photo_alt}/></li>
+            <DivMatchs>
+                <li key={user.id}>
+                    <p>{user.name}</p>
+                    <ImagemMatch src={user.photo} alt={user.photo_alt}/>
+                </li>
+            </DivMatchs>
         )
     })
 
@@ -53,10 +76,11 @@ export default function MatchCard() {
     }
 
     return (
-        <div>
+        <DivButton>
             <TodasMatch>{todasMatch}</TodasMatch>
-            <button onClick={clearMatch}><AiOutlineClear/>Limpar matches!</button>
-        </div>
+
+                <ButtonClear onClick={clearMatch}><AiOutlineClear size="30px"/>Limpar matches!</ButtonClear>
+        </DivButton>
     )
 
 }

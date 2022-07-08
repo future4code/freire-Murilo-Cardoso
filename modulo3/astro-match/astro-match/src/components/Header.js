@@ -2,6 +2,7 @@ import React from "react";
 import imgLogo from '../img/logoAstro.png';
 import imgMessage from '../img/messageBalon2.png'
 import styled from "styled-components";
+/* import React, { useEffect, useState } from "react"; */
 
 const HeaderStyled = styled.div`
     height: 50px;

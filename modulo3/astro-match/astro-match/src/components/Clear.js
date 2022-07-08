@@ -1,4 +1,5 @@
-import React from "react";
+import axios from "axios";
+/* import React, { useEffect, useState } from "react"; */
 import styled from "styled-components";
 
 const ClearButton = styled.div`
@@ -10,7 +11,7 @@ const ClearButton = styled.div`
 export default function Clear(props) {
     return(
         <ClearButton>
-            <button>Clear</button>
+            <button /* onClick={clearButton} */>Clear</button>
         </ClearButton>
     )
 }

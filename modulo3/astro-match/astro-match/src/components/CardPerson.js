@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import axios from 'axios'
-
+import {FcLike} from "react-icons/fc"
+import {IoIosHeartDislike} from "react-icons/io"
 const CardPersonStyled = styled.div`
 text-align: center;
 height: 500px;
@@ -32,6 +33,12 @@ display: flex;
 font-style: italic;
 margin-left: 10px;
 margin-top: 10px;
+`
+const Div = styled.div`
+display: flex;
+align-items: center;
+margin: 10px;
+gap: 10px;
 `
 
 export default function CardPerson() {
@@ -73,11 +80,13 @@ export default function CardPerson() {
         <div>
             <CardPersonStyled>
                     <Imagem src={perfilCard.photo} alt={perfilCard.photo_alt}/>
+                    <Div>
                     <p><Strong>{perfilCard.name},</Strong></p>
                     <Idade>{perfilCard.age} anos</Idade>
+                    </Div>
                     <Biografia>{perfilCard.bio}</Biografia>
-                    <Button onClick={()=>{executeCard()}}>Dislike</Button>
-                    <Button onClick={()=>{matchOk()}}>Like</Button>
+                    <Button onClick={()=>{executeCard()}}><IoIosHeartDislike/></Button>
+                    <Button onClick={()=>{matchOk()}}><FcLike/></Button>
             </CardPersonStyled>       
         </div>
     )

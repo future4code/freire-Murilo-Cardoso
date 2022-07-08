@@ -5,6 +5,7 @@ import CardPerson from './components/CardPerson';
 import Header from './components/Header'
 import { useState } from 'react';
 
+
 const MainApp = styled.div`
     width: 400px;
     height: 600px;
@@ -24,22 +25,32 @@ const MainApp = styled.div`
 const App = () => {
 
 
- /*  const [screen, setScreen] = useState
+const [screen, setScreen] = useState("pagina atual")
   
- escolherTela = () => {
-  switch (this.state.telaAtual) {
-      case "azul":
-        return <TelaAzul />;
-      case "vermelha":
-        return <TelaVermelha />;
+ const ChangeScreen = () => {
+  switch (screen) {
+      case "pagina atual":
+        return <CardPerson/>
+      case "match card":
+        return <MatchCard/>
+      default:
+        return <div>erro!</div>
     }
   };
- 
- */
+  const goToMatch = () => {
+    setScreen("match card")
+  } 
+  const goToHome = () => {
+    setScreen("pagina atual")
+  }
+
   return (
     <MainApp>
-      <Header/>
-      <CardPerson/>
+      <Header 
+        home={goToHome}
+        match={goToMatch}/>
+      {ChangeScreen()}
+{/*       <CardPerson/> */}
 {/*       <MatchCard/> */}
     </MainApp>
   );

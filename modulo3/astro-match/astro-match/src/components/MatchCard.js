@@ -1,7 +1,7 @@
 import axios from "axios";
 import styled from "styled-components";
 import React, { useEffect, useState } from "react"; 
-
+import {AiOutlineClear} from 'react-icons/ai'
 
 /* const StyledButton = styled.div`
     display: flex;
@@ -12,6 +12,11 @@ import React, { useEffect, useState } from "react";
     border: 2px solid black;
 
 ` */
+    const TodasMatch = styled.div`
+    display: flex;
+    height: 200px;
+    width: 200px;
+    `
 
 export default function MatchCard() {
 
@@ -49,8 +54,8 @@ export default function MatchCard() {
 
     return (
         <div>
-            <div>{todasMatch}</div>
-            <button onClick={clearMatch}>Limpar matches!</button>
+            <TodasMatch>{todasMatch}</TodasMatch>
+            <button onClick={clearMatch}><AiOutlineClear/>Limpar matches!</button>
         </div>
     )
 

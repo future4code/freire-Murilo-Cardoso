@@ -12,13 +12,13 @@ export const Router = () => {
         return(
             <BrowserRouter>
             <Routes>
-              <Route index element ={<HomePage/>}/>    
-              <Route path="Application" element ={<ApplicationFormPage/>}/>    
+              <Route index="/" element ={<HomePage/>}/>    
+              <Route path="trips/application" element ={<ApplicationFormPage/>}/>    
               <Route path="AdminHome" element ={<AdminHomePage/>}/>
-              <Route path="ListTrips" element ={<ListTripsPage/>}/>
-              <Route path="Create" element ={<CreateTripPage/>}/>
+              <Route path="trips/list" element ={<ListTripsPage/>}/>
+              <Route path="admin/trips/create" element ={<CreateTripPage/>}/>
               <Route path="Login" element ={<LoginPage/>}/>
-              <Route path="TripDetail" element ={<TripDetailsPage/>}/>
+              <Route path="admin/trips/:id  " element ={<TripDetailsPage/>}/>
             </Routes>
           </BrowserRouter>
         )

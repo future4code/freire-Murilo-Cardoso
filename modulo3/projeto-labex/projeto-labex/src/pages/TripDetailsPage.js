@@ -1,6 +1,16 @@
 import React from "react";
+import {useNavigate} from 'react-router-dom'
 
 export const TripDetailsPage = () => {
+    
+    
+    
+    
+    const navigate = useNavigate()
+    
+    const goToHome = () => {
+        navigate ("/HomePage")
+    }
     
     return(
         <div>
@@ -9,6 +19,7 @@ export const TripDetailsPage = () => {
             <div>
                 <img src="https://loremflickr.com/320/240/dog>" alt="" />
             </div>
+            <button onClicks={goToHome}></button>
         </div>
     )
 }

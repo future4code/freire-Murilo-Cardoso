@@ -16,16 +16,18 @@ export const ApplicationFormPage = () => {
     const navigate = useNavigate()
 
     const goToHome = () => {
-        navigate ("/HomePage")
+        navigate (-1)
     }
 
     return(
         <div>
+            <strong>Inscreva-se para uma viagem</strong>
             <p>Para o usuário se candidatar à viagens, página que vai ter o formulário de inscrição</p>
             <div>
                 <img src="https://loremflickr.com/320/240/dog>" alt="" />
             </div>
-            <button onClicks={goToHome}></button>
+            <button onClick={goToHome}>Voltar</button>
+            <button>Enviar</button>
         </div>
     )
 }

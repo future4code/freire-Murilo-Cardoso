@@ -19,7 +19,7 @@ export const TripDetailsPage = () => {
             <div>
                 <img src="https://loremflickr.com/320/240/dog>" alt="" />
             </div>
-            <button onClicks={goToHome}></button>
+            <button onClick={goToHome}></button>
         </div>
     )
 }

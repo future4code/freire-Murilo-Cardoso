@@ -6,8 +6,9 @@ export const AdminHomePage = () => {
     const navigate = useNavigate()
 
     const goBack = () => {
-        navigate ("/HomePage")
+        navigate (-1)
     }
+    
     return(
         <div>
             <p>Para o administrador ver a lista de viagens e poder deletá-las ou acessar o detalhe de cada uma delas</p>

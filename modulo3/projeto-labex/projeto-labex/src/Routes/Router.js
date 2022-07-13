@@ -7,7 +7,6 @@ import { LoginPage } from "../pages/LoginPage"
 import { TripDetailsPage } from "../pages/TripDetailsPage"
 import { HomePage } from "../pages/HomePage"
 
-
 export const Router = () => {
         return(
             <BrowserRouter>
@@ -18,7 +17,7 @@ export const Router = () => {
               <Route path="trips/list" element ={<ListTripsPage/>}/>
               <Route path="admin/trips/create" element ={<CreateTripPage/>}/>
               <Route path="Login" element ={<LoginPage/>}/>
-              <Route path="admin/trips/:id  " element ={<TripDetailsPage/>}/>
+              <Route path="admin/trips/:id" element ={<TripDetailsPage/>}/>
             </Routes>
           </BrowserRouter>
         )

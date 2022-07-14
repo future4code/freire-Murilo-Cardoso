@@ -27,8 +27,11 @@ export const CreateTripPage = () => {
 
     const navigate = useNavigate()
 
-    const goToHome = () => {
+/*     const goToHome = () => {
         navigate ("/")
+    } */
+    const goBack = () => {
+        navigate (-1)
     }
 
     return(
@@ -46,8 +49,8 @@ export const CreateTripPage = () => {
                 <input></input>
             </form>
             <div>
-                <button onClick={goToHome}>Voltar</button>
-                <button onClick={goToHome}>Criar</button>
+                <button onClick={goBack}>Voltar</button>
+                <button>Criar</button>
             </div>
         </div>
     )

@@ -46,7 +46,8 @@ export const LoginPage = () => {
       .then((response) => {
         console.log("Deu certo: ", response.data.token);
         localStorage.setItem("token", response.data.token);
-        navigate.push("/");
+        navigate("/AdminHome");
+        /* if (response === ) */
       })
       .catch((error) => {
         console.log("Deu errado: ", error.response);

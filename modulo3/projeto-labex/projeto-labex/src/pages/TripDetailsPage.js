@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import axios from "axios";
 import { useEffect } from "react";
 
-/* FUNCAO QUE PROTEGE A PAGINA SE O USUARIO N TEM SENHA */
+/* FUNCAO QUE PROTEGE A PÁGINA SE O USUARIO N TEM SENHA */
 const useProtectedPage = () => {
     
     

@@ -1,14 +1,14 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {useNavigate} from 'react-router-dom'
 /* import { InputApplication } from "../services/styled"; */
 /* import { InputApplicationInput } from "../services/styled"; */
 import useForm from "../hooks/useForm";
 import countryList from "../services/countryList";
-
+import axios from 'axios'
 
 export const ApplicationFormPage = () => {
 
-
+    const [listTrips, setListTrips] = useState([])
 
     const navigate = useNavigate()
 
@@ -26,22 +26,64 @@ export const ApplicationFormPage = () => {
         applicationText: "",
         profession: "",
         country: "",
-        trip: "",
+        id: ""
       });
 
         //FUNÇÃO QUE LIMPA OS INPUTS 
 
-     const register = (event) => {
+    const register = (event) => {
         event.preventDefault();
         console.log("Formulário enviado!", form);
+        
+
+        const body = {
+            name: form.name,
+            age: form.age,
+            applicationText: form.applicationText,
+            profession: form.profession,
+            country: form.country
+        }
+        axios.post(
+            `https://us-central1-labenu-apis.cloudfunctions.net/labeX/:aluno/trips/${form.id}/apply`, body
+        )
+        .then((res)=>{
+            console.log("deu certo!")
+        })
+        .catch((err)=>{
+            console.log("erro!")
+        })
+
         cleanFields();
-      }; 
+    }; 
+
+    ///////////\\\\\\\\\\\\
 
         //FUNÇÃO MAP DOS PAISES 
 
-      const countryListAll = countryList.map(pais => {
+    const countryListAll = countryList.map(pais => {
         return <option>{pais}</option>
-     })
+    })
+
+    ///////////\\\\\\\\\\\\
+
+
+    const getTrip = () => {
+        axios.get(
+            `https://us-central1-labenu-apis.cloudfunctions.net/labeX/murilo/trips`
+        )
+        .then((res)=>{
+            console.log("deu certo!")
+            setListTrips(res.data.trips)
+        })
+        .catch((err)=>{
+            console.log("erro!")
+        })
+    }
+
+    useEffect(()=>{
+        getTrip()
+    },[])
+
 
     return(
         <div>
@@ -50,12 +92,20 @@ export const ApplicationFormPage = () => {
             <form onSubmit={register}>
                 <h1>Inscreva-se para uma viagem</h1>
                 <select
-                    name={"trip"}
-                    value={form.trip}
+                    name={"id"}
                     onChange={onChange}
-                    required>
+                    required
+                    defaultValue={form.id}
+                    >
                     <option>Escolha uma Viagem</option>
-                    <option></option>
+                    {listTrips && listTrips.map(trip=>{
+                        return ( 
+                        <option 
+                        key={trip.id} 
+                        value={trip.id}>
+                        {trip.name}
+                        </option>
+                        )})}
                 </select>
                 <input
                     name={"nome"}
@@ -103,11 +153,12 @@ export const ApplicationFormPage = () => {
                     <option>Escolha um Pais</option>
                     {countryListAll}
                 </select>
-            </form>
-            <div className="divBotao">
-                <button onClick={goToHome}>Voltar</button>
+                <div className="divBotao">
+                
                 <button>Enviar</button>
             </div>
+            </form>
+            <button onClick={goToHome}>Voltar</button>
         </div>
     )
 }

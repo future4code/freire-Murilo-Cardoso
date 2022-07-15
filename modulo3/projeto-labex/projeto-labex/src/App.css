@@ -71,3 +71,8 @@ button:hover{
     border-radius: 5px;
     box-shadow: 0px 1px 2px #000000;
 }
+
+.homeLogin {
+  display: flex;
+  justify-content: center;
+}

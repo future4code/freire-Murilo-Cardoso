@@ -15,9 +15,11 @@ export const HomePage = () => {
     return(
         <div>
             <strong>Labex</strong>
-            <p>Para o usuário escolher entre Área Administrativa e Lista de Viagens</p>
-            <button onClick={goToTravelPage}>Viagens</button>
-            <button onClick={goLoginPage}>Login</button>
+            <p>Labex - Sua viagem para o espaço!</p>
+            <div className="homeLogin">
+                <button onClick={goToTravelPage}>Viagens</button>
+                <button onClick={goLoginPage}>Login</button>
+            </div>
         </div>
     )
 }

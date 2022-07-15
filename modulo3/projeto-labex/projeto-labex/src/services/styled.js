@@ -38,3 +38,17 @@ export const InputApplicationInput = styled.input`
 `
 
 /////////////////////////////////////////////
+
+//CARD CARDTRIP ALLTRIPS STYLED
+
+export const DivAllTrips = styled.div`
+
+margin: 2px;
+border: 2px solid #2F2CFF;
+width: 400px;
+text-align: center;
+justify-content: center;
+position: relative;
+color: #2F2CFF;
+background-color: #2f2cff29;
+`

@@ -70,9 +70,6 @@ export const LoginPage = () => {
         <div>
             <strong>Login</strong>
             <p>Para fazermos login como administrador</p>
-            <div>
-                <img src="https://loremflickr.com/320/240/dog>" alt="" />
-            </div>
             <LoginInputDiv>
                 <LoginInput 
                     type="email"

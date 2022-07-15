@@ -36,9 +36,6 @@ export const ListTripsPage = () => {
             <strong>Lista de Viagens!</strong>
             <p>Para vermos todas as viagens</p>
             <div>
-                <img src="https://loremflickr.com/320/240/dog>" alt="" />
-            </div>
-            <div>
                 {listTrips}
             </div>
             <button onClick={goToHome}>Voltar</button>

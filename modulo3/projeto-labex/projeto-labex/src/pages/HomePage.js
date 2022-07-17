@@ -14,8 +14,7 @@ export const HomePage = () => {
 
     return(
         <div>
-            <strong>Labex</strong>
-            <p>Labex - Sua viagem para o espaço!</p>
+            <p><strong>Labex</strong> - Sua viagem para o espaço!</p>
             <div className="homeLogin">
                 <button onClick={goToTravelPage}>Viagens</button>
                 <button onClick={goLoginPage}>Login</button>

@@ -35,7 +35,7 @@ export const ListTripsPage = () => {
         <div>
             <strong>Lista de Viagens!</strong>
             <p>Para vermos todas as viagens</p>
-            <div>
+            <div className="listTripDiv">
                 {listTrips}
             </div>
             <button onClick={goToHome}>Voltar</button>

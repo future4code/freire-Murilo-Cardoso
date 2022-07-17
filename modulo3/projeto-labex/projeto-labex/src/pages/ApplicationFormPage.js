@@ -117,7 +117,7 @@ export const ApplicationFormPage = () => {
                     title={"O nome deve ter no mínimo 5 letras"}
                 />
                 <input
-                    name={"idade"}
+                    name={"age"}
                     value={form.age}
                     onChange={onChange}
                     placeholder="Idade"
@@ -126,7 +126,7 @@ export const ApplicationFormPage = () => {
                     min={18} //propriedade de "min" que o "number" possui
                 />
                 <input
-                    name={"texto"}
+                    name={"applicationText"}
                     value={form.applicationText}
                     onChange={onChange}
                     placeholder="Texto de Candidatura"
@@ -136,7 +136,7 @@ export const ApplicationFormPage = () => {
                     title={"O texto deve ter no mínimo 10 caracteres"}
                 />
                 <input
-                    name={"profissão"}
+                    name={"profession"}
                     value={form.profession}
                     onChange={onChange}
                     placeholder="Profissão"
@@ -154,11 +154,11 @@ export const ApplicationFormPage = () => {
                     {countryListAll}
                 </select>
                 <div className="divBotao">
-                
+                <button onClick={goToHome}>Voltar</button>
                 <button>Enviar</button>
             </div>
             </form>
-            <button onClick={goToHome}>Voltar</button>
+
         </div>
     )
 }

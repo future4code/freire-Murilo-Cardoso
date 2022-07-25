@@ -1,0 +1,78 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url(https://images.unsplash.com/photo-1454789548928-9efd52dc4031?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80);
+  height: 100vh;
+  width: auto;
+}
+.App {
+  text-align: center;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+h1, strong, p {
+  text-align: center;
+  color: #2F2CFF;
+}
+img {
+  
+}
+
+form {
+
+  display: flex;
+  flex-direction: column;
+  -webkit-box-align: center;
+  align-items: center;
+  width: 500px;
+
+}
+
+.divBotao {
+  display: flex;
+  justify-content: space-around;
+  width: 500px;
+  margin: 10px 0px;
+}
+
+button {
+    width: 100px;
+    height: 35px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #ffffff;
+    font-family: Anton, sans-serif;;
+    background-color: #318aff00;
+    border: solid #2F2CFF 3.4px;
+    border-radius: 17px;
+    text-shadow: 0px 1px 2px #000000;
+    box-shadow: 0px 1px 5px #0D2444;
+    -webkit-transition: all 0.34s ease;
+    -moz-transition: all 0.34s ease;
+    -o-transition: all 0.34s ease;
+    transition: all 0.34s ease;
+}
+
+button:hover{
+    color: FFFFFF;
+    background: linear-gradient(to bottom, #5A86FF, #335AD0);
+    border: 1px solid #7CAFFF;
+    border-radius: 5px;
+    box-shadow: 0px 1px 2px #000000;
+}
+
+.homeLogin {
+  display: flex;
+  justify-content: center;
+}

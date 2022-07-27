@@ -5,12 +5,15 @@ import FeedPostPage from "../pages/FeedPostsPage/FeedPostPage";
 import LoginPage from "../pages/LoginPage/LoginPage";
 import SignUpPage from "../pages/SignUpPage/SignUpPage";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import Header from "../components/Header/Header"
+
 
 
 const Router = () => {
 
     return(
         <BrowserRouter>
+            <Header/>
             <Routes>
                 <Route path="/login" element={<LoginPage/>}/>
                 <Route path="/cadastro" element={<SignUpPage/>}/>     

@@ -9,6 +9,10 @@ import useForm from "../../hooks/useForm";
 import TextField from "@material-ui/core/TextField";
 import logoprincipal from "../../assets/logoprincipal.png"
 
+
+
+
+
 const LoginPage = () => {
     
    const navigate = useNavigate()
@@ -58,6 +62,7 @@ const LoginPage = () => {
                             >
                             Fazer Login
                         </Button>
+                        <hr/>
                         <Button 
                             margin={"normal"}
                             fullWidth

@@ -10,3 +10,7 @@ export const goToSignUp = (navigate) => {
 export const goToAddPosts = (navigate) => {
     navigate("/adicionar-posts")
 }
+
+export const goToFeed = (navigate) => {
+    navigate ("/")
+}

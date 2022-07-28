@@ -9,11 +9,11 @@ import useForm from "../../hooks/useForm";
 import TextField from "@material-ui/core/TextField";
 import logoprincipal from "../../assets/logoprincipal.png"
 import { login } from "../../services/user";
-import useUnprotectedPage from "../../hooks/useUnprotectedPage";
+/* import useUnprotectedPage from "../../hooks/useUnprotectedPage"; */
 
 
 
-const LoginPage = () => {
+const LoginPage = ({rightButtonText, setRightButtonText}) => {
     
    const navigate = useNavigate()
     
@@ -25,7 +25,7 @@ const LoginPage = () => {
    const onSubmitForm = (event) => {
         event.preventDefault();
         console.log(form)
-        login(form, clear, navigate)
+        login(form, clear, navigate, setRightButtonText)
    }
    
 

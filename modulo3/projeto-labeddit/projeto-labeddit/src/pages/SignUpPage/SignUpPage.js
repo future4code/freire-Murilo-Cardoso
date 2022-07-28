@@ -9,18 +9,18 @@ import { Button } from "@material-ui/core";
 import { DivCheckbox } from "./styled";
 import useForm from "../../hooks/useForm"
 import { signUp } from "../../services/user";
+import { useNavigate } from "react-router-dom"
 
+const SignUpPage = ({ rightButtonText, setRightButtonText}) => {
 
-
-const SignUpPage = () => {
-
+    const navigate = useNavigate()
 
     const [form, onChange, clear] = useForm ({name: "", email: "", password: ""})
 
     const onSubmitForm = (event) => {
         event.preventDefault();
         console.log(form)
-        signUp(form, clear, navigate)
+        signUp(form, clear, navigate, setRightButtonText)
     }
 
 

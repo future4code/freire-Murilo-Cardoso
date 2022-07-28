@@ -5,7 +5,7 @@ import { goToFeed } from "../Routes/coordinator";
 
 //LOGIN TOKEN API
 
-export const login = (body, clear, navigate) => {
+export const login = (body, clear, navigate, setRightButtonText) => {
   axios
     .post(`${BASE_URL}/users/login`, body)
     .then((res) => {
@@ -14,6 +14,7 @@ export const login = (body, clear, navigate) => {
       localStorage.setItem("token", res.data.token);
       clear();
       goToFeed(navigate)
+      setRightButtonText("Logout")
     })
     .catch((err) => {
       alert(err);
@@ -24,7 +25,7 @@ export const login = (body, clear, navigate) => {
 
 //CADASTRO TOKEN API
 
-export const signUp = (body, clear, navigate) => {
+export const signUp = (body, clear, navigate, setRightButtonText) => {
   axios
     .post(`${BASE_URL}/users/signup`, body)
     .then((res) => {
@@ -33,6 +34,7 @@ export const signUp = (body, clear, navigate) => {
       localStorage.setItem("token", res.data.token);
       clear();
       goToFeed(navigate)
+      setRightButtonText("Logout")
     })
     .catch((err) => {
       alert(err);

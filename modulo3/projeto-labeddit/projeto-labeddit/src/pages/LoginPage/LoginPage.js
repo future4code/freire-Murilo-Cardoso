@@ -8,22 +8,28 @@ import { InputsContainer } from "./styled";
 import useForm from "../../hooks/useForm";
 import TextField from "@material-ui/core/TextField";
 import logoprincipal from "../../assets/logoprincipal.png"
-
-
+import { login } from "../../services/user";
+import useUnprotectedPage from "../../hooks/useUnprotectedPage";
 
 
 
 const LoginPage = () => {
     
    const navigate = useNavigate()
-
+    
    const [form, onChange, clear] = useForm({email: "", password: ""})
+   
+
 
 
    const onSubmitForm = (event) => {
         event.preventDefault();
-        
+        console.log(form)
+        login(form, clear, navigate)
    }
+   
+
+
 
     return (
         <ScreenContainerLogin>

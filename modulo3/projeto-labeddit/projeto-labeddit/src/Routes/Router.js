@@ -15,9 +15,9 @@ const Router = () => {
         <BrowserRouter>
             <Header/>
             <Routes>
-                <Route path="/login" element={<LoginPage/>}/>
+                <Route path="/" element={<LoginPage/>}/>
                 <Route path="/cadastro" element={<SignUpPage/>}/>     
-                <Route index element={<FeedPostPage/>}/>   
+                <Route path="/feed" element={<FeedPostPage/>}/>   
                 <Route path="/adicionar-posts" element={<AddPostPage/>}/>
                 <Route path="*" element={<ErrorPage/>}/>   
             </Routes>

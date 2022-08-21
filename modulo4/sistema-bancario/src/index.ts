@@ -10,13 +10,20 @@ app.use(cors())
 
 app.post("/users/create", (req: Request, res: Response)=>{
     try{
-    // validar as entradas da req
-    //consultar ou alterar a base de dados
     const {name, CPF, dateBirthAsString}= req.body //desestruturação
     
     const [day, month, year] = dateBirthAsString.split("/")
     
     const dateBirth: Date = new Date(`${year}-${month}-${day}`)
+
+    const ageInMilisseconds : number = Date.now() - dateBirth.getTime()
+
+    const ageInYears: number = ageInMilisseconds / 1000 /60 /60 /24 /365
+
+    if(ageInYears < 18) {
+        res.statusCode = 406
+        throw new Error("Idade deve ser maior que 18 anos")
+    }
 
     accounts.push({
         name,
@@ -25,12 +32,11 @@ app.post("/users/create", (req: Request, res: Response)=>{
         balance: 0,
         statement: []
     })
-    //validar os resultados da consulta
-    //enviar a resposta
+
     res.status(201).send("Conta criada com sucesso!")
     } catch(error: any) {
         console.log(error)
-        res.status(400).send(error.message)
+        res.send(error.message)
     }
 })
 

@@ -12,16 +12,20 @@ type user = {
 }
 
 
-const getSubscribers = async (): Promise<user[]> => {
-    const response = await axios.get(`${baseURL}/subscribers`);
-    return response.data.map((res: any) => {
-      return {
-        id: res.id,
-        name: res.name,
-        email: res.email,
-      };
-    });
-  };
+async function getAllSubscribers(): Promise<user[]> {
+  const response = await axios.get(`${baseURL}/subscribers`);
+  return response.data;
+};
 
-console.log(getSubscribers()) 
+const main = async():Promise<void> =>{
+  try{
+      console.log(await getAllSubscribers())
 
+  }
+  catch(error:any){
+      const resp = error.responde.data || error.message
+      console.log(resp)
+  }
+}
+
+main ()

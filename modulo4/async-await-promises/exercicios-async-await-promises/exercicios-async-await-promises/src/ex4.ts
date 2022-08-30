@@ -18,27 +18,21 @@ const newNews: newType = {
     date: Date.now()
 }
 
-const createNews = async (newNews: newType): Promise<void> => {
 
-    return await axios.put(`${baseURL}/news`, newNews)
+  const createNews = async (newsNews:newType): Promise<void> =>{
+    return axios.put(`${baseURL}/news`, newsNews)
 }
 
-/* const createNews = async(): Promise<newNews> => {
-    const response = await axios.put(`${baseURL}/news`, {
-        title: title,
-        content: content, 
-        date: date
-      });
-};
- */
-/*   async function createNews(
-    title: string,
-    content: string,
-    date: number
-  ): Promise<void> {
-    await axios.put(`${baseURL}/news`, {
-      title: title,
-      content: content, 
-      date: date
-    });
-  } */
+
+const main = async():Promise<void> =>{
+   try{
+      createNews(newNews)
+
+   }
+   catch(error:any){
+       const resp = error.responde.data || error.message
+       console.log(resp)
+   }
+}
+
+main ()

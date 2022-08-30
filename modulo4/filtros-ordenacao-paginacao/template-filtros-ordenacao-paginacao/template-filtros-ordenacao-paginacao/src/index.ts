@@ -1,8 +1,8 @@
-import { getAllUsers } from "./endpoints/getAllUsers";
 import express from "express"
 import cors from "cors"
 import { AddressInfo } from "net"
-import { getAllNames } from "./endpoints/getAllNames";
+import { getUserByNames } from "./endpoints/getUserByNames";
+import { getTypeByParams } from "./endpoints/getTypeByParams";
 
 
 export const app = express()
@@ -11,9 +11,9 @@ app.use(express.json())
 app.use(cors())
 
 
-app.get("/users", getAllUsers)
+app.get("/type/:type", getTypeByParams)
 
-app.get("/names", getAllNames)
+app.get("/names", getUserByNames)
 
 const server = app.listen(process.env.PORT || 3003, () => {
    if (server) {

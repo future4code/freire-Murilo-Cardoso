@@ -1,11 +1,13 @@
-import axios from "axios"
-import { Request, Response } from "express"
-import {Address } from "../types/typeAddress"
+import axios from "axios";
+import {Request, Response} from "express";
+import { Address } from "../types/typeAddress";
 
-export const getAddress = async (req: Request, res: Response) => {
-    try {
 
-        const cep = req.params.cep
+
+
+export const getFullAddress = async (cep: string): Promise<Address|undefined> => {
+    
+    try{
     
         const result = await axios.get(`https://viacep.com.br/ws/${cep}/json/`)
         
@@ -16,10 +18,9 @@ export const getAddress = async (req: Request, res: Response) => {
             estado: result.data.uf
         }
 
-        res.status(200).send(address)
-
+        return address;
 
        } catch (error: any) {
-        res.status(500).send(error.message)
+        return undefined;
        }
 }

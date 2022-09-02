@@ -6,3 +6,18 @@ Content-Type: application/json
 "email": "osvaldo_teste@bol.com.br",
 "password": "testeteste2"
 }
+
+###
+
+GET http://localhost:3003/users
+
+###
+
+POST http://localhost:3003/products
+Content-Type: application/json
+
+{
+"name": "Oculos de Sol",
+"price": 200.30,
+"image_url": "https://burst.shopifycdn.com/photos/young-woman-in-sunglasses-with-rings.jpg?width=925&format=pjpg&exif=1&iptc=1"
+}

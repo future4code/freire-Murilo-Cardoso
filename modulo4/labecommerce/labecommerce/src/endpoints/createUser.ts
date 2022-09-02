@@ -1,6 +1,6 @@
 import axios from "axios"
 import { Request, Response } from "express"
-import { User, UserInsert } from "../types/typeUser"
+import { User, UserData } from "../types/typeUser"
 import insertUser from "../data/insertUser"
 
 
@@ -15,7 +15,7 @@ export const createUser = async (req: Request, res: Response) => {
             throw new Error ("Deve passar o nome, email, password!")
         }
 
-        const userInsert: UserInsert = {
+        const userInsert: UserData = {
         id: Date.now().toString(),
         name,
         email,

@@ -2,14 +2,13 @@ import { AddressInfo } from "net";
 import app from "./app";
 import { createUser } from "./endpoints/createUser";
 import createProducts from "./endpoints/createProducts"
-
+import {getAllUsers} from './endpoints/getAllUsers'
 
 //ENDPOINTS 
 
 app.post("/user", createUser)
 app.post("/products", createProducts)
-
-//app.get("/users", getUsers)
+app.get("/users", getAllUsers)
 
 
 const server = app.listen(process.env.PORT || 3003, () => {

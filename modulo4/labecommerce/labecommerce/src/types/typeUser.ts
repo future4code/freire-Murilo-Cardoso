@@ -4,7 +4,7 @@ export type User = {
     password: string
 }
 
-export type UserInsert = {
+export type UserData = {
     id: string,
     name: string,
     email: string,

@@ -1,0 +1,8 @@
+POST http://localhost:3003/user
+Content-Type: application/json
+
+{
+"name": "Osvaldo Teste Silva",
+"email": "osvaldo_teste@bol.com.br",
+"password": "testeteste2"
+}

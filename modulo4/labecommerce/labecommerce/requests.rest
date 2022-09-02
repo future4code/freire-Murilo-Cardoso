@@ -17,7 +17,12 @@ POST http://localhost:3003/products
 Content-Type: application/json
 
 {
-"name": "Oculos de Sol",
-"price": 200.30,
-"image_url": "https://burst.shopifycdn.com/photos/young-woman-in-sunglasses-with-rings.jpg?width=925&format=pjpg&exif=1&iptc=1"
+"name": "Pato do Lago",
+"price": 80.30,
+"image_url": "https://aventurasnahistoria.uol.com.br/media/_versions/mundo/pato_widemd.jpg"
 }
+
+
+###
+
+GET http://localhost:3003/products

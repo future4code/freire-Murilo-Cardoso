@@ -21,7 +21,5 @@ export default async function selectAllUsers(): Promise<UserData[] | undefined> 
         return typeUser(user)
     })
 
-    console.log(allUserType)
-
     return result
 }

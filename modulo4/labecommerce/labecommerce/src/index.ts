@@ -3,13 +3,14 @@ import app from "./app";
 import { createUser } from "./endpoints/createUser";
 import createProducts from "./endpoints/createProducts"
 import {getAllUsers} from './endpoints/getAllUsers'
+import {getAllProducts} from "./endpoints/getAllProducts"
 
 //ENDPOINTS 
 
 app.post("/user", createUser)
 app.post("/products", createProducts)
 app.get("/users", getAllUsers)
-
+app.get("/products", getAllProducts)
 
 const server = app.listen(process.env.PORT || 3003, () => {
     if (server) {

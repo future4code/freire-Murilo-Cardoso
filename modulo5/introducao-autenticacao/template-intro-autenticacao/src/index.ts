@@ -3,10 +3,11 @@ import editUser from './endpoints/editUser'
 import createUser from './endpoints/createUser'
 import { Authenticator} from "./services/Authenticator"
 import {AuthenticationData} from "./types"
-
+import login from "./endpoints/login"
 
 app.post('/user/signup', createUser)
-app.put('/user/edit/:id', editUser)
+app.put('/user/edit', editUser)
+app.post('/user/login', login)
 
 //a) Qual a sua opinião em relação a usar strings para representar os ids? 
 //Você concorda que seja melhor do que usar números?

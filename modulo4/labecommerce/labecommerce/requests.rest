@@ -1,0 +1,40 @@
+POST http://localhost:3003/user
+Content-Type: application/json
+
+{
+"name": "Maria Gonçalvez Dias",
+"email": "mariaziha_teste4@bol.com.br",
+"password": "testeteste4"
+}
+
+###
+
+GET http://localhost:3003/users
+
+###
+
+POST http://localhost:3003/products
+Content-Type: application/json
+
+{
+"name": "Pato do Lago",
+"price": 80.30,
+"image_url": "https://aventurasnahistoria.uol.com.br/media/_versions/mundo/pato_widemd.jpg"
+}
+
+
+###
+
+GET http://localhost:3003/products
+
+
+###
+
+POST http://localhost:3003/purchases
+Content-Type: application/json
+
+{
+    "userId": "1662140976162",
+    "productId": "1662143497427",
+    "quantity":10
+}

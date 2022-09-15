@@ -4,7 +4,7 @@ import { config } from "dotenv";
 //dotenv
 config();
 
-export const generateHah = (plainText: string): string => {
+export const generateHash = (plainText: string): string => {
   const rounds: number = Number(process.env.BCRYPT_COST);
   const salt: string = genSaltSync(rounds);
   return hashSync(plainText, salt);

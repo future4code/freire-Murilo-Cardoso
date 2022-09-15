@@ -1,18 +1,16 @@
-import connection from "./connection";
+import connection from "../connection";
+import {userTableName,  recipeTableName } from "../types"
 
-const userTableName = "cookenu_users"
-const recipeTableName = "cookenu_recipes"
 
-try {
-    connection.raw(`
-    CREATE TABLE ${userTableName}(
+connection.raw(`
+    CREATE TABLE IF NOT EXISTS ${userTableName}(
         id VARCHAR(255) NOT NULL PRIMARY KEY,
         name VARCHAR(255) NOT NULL,
         email VARCHAR(255) NOT NULL UNIQUE,
         password VARCHAR (255) NOT NULL
     );
 
-    CREATE TABLE ${recipeTableName}(
+    CREATE TABLE IF NOT EXISTS ${recipeTableName}(
         id VARCHAR(255) PRIMARY KEY,
         title VARCHAR(255) NOT NULL,
         description VARCHAR(2000) NOT NULL,
@@ -21,8 +19,10 @@ try {
         FOREIGN KEY (author_id) REFERENCES ${userTableName} (id)
     );
     
-    `)
-} catch (error:any) {
-
-    
-}
+`).then(()=> console.log(
+    "As tabelas foram criadas com sucesso!"
+)).catch(error =>
+        console.log(error.message)
+).finally(()=>{
+    connection.destroy
+})

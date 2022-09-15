@@ -2,8 +2,14 @@ import app from "./app"
 import { getTokenData, generateToken } from "./services/authenticator"
 
 
+app.post('/user/signup')
+app.post('/user/login')
+app.get('/user/profile')
+app.get('/user/:id/profile')
 
-app.get('/')
+app.post('/recipe')
+app.get('recipe/:id')
+
 
 const token = generateToken({id: "hellou"})
 

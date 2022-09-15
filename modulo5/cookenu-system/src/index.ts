@@ -1,11 +1,11 @@
 import app from "./app" 
 import signup from "./endpoints/users/signup"
 import { getTokenData, generateToken } from "./services/authenticator"
-
+import login from "./endpoints/users/login"
 
 app.post('/user/signup', signup)
+app.post('/user/login', login)
 
-app.post('/user/login')
 app.get('/user/profile')
 app.get('/user/:id/profile')
 

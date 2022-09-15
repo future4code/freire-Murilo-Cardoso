@@ -12,10 +12,10 @@ export default async function signup(
 
 try {
 
-    //descontrução do body
+    //descontrução do body 
     const { name, email, password } = req.body
 
-    //variavel para gerar o id passando string como tipagem
+    //variavel para gerar o "id" passando string como tipagem
     const id: string = generateId()
 
 
@@ -27,10 +27,12 @@ try {
     await connection(userTableName)
     .insert({id,name,email,password: cypherPassword})
 
-    //gerando o token
+    //gerando o token,passando o payload "id"
     const token: string = generateToken({id})
 
-    res.send()
+    //enviando o token como resposta
+    res.send({token})
+
 } catch (error:any) {
     console.log(error.message);
     res.status(500).send("Internal server error")

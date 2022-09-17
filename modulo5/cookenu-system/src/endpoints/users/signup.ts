@@ -15,6 +15,27 @@ try {
     //descontrução do body 
     const { name, email, password } = req.body
 
+
+    //validação
+    if(!name || !email || !password){
+        res.statusCode = 422
+        throw new Error("name, email, and password required")
+    }
+
+    if(password.length < 6){
+        res.statusCode = 422
+        throw new Error("must be at least 6 character long")
+    }
+
+    const user = await connection(userTableName)
+    .where({email})
+
+    if(user){
+        res.statusCode = 409
+        throw new Error("email already in use")
+    }
+
+    
     //variavel para gerar o "id" passando string como tipagem
     const id: string = generateId()
 

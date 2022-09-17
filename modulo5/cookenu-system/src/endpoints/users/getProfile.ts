@@ -15,8 +15,22 @@ export default async function getProfile(
 
         const tokenData = getTokenData(token)
 
+        //validação
+        if(!tokenData){
+            res.statusCode = 401
+            throw new Error("Unauthorized")
+        }
+
+
         const [user] = await connection(userTableName)
             .where({ id: tokenData?.id })
+
+
+        //validação
+        if(!user){
+                res.statusCode = 404
+                throw new Error("Unauthorized")
+        }  
 
         const { id, email, name } = user
                 
@@ -26,7 +40,7 @@ export default async function getProfile(
             email
         })
 
-        
+
     } catch (error:any) {
         console.log(error.message);
 

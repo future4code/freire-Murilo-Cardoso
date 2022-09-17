@@ -8,10 +8,25 @@ export default async function createRecipe(req: Request, res: Response) {
   try {
 
     
-    const token = req.headers.authorization
+    
     const {title, description } = req.body
+    const token = req.headers.authorization
 
     const tokenData = getTokenData(token!)
+
+
+    //validações 
+    
+    if(!tokenData){
+        res.statusCode = 401
+        throw new Error("Unauthorized")
+    }
+
+    if(!title || description){
+        res.statusCode = 422
+        throw new Error("'title' and 'description' required")
+    }
+
 
     //gerador de Id para a receita
     const id: string = generateId()

@@ -14,14 +14,22 @@ export default async function login(
         //pegar email e senha do body
         const {email, password} = req.body
 
+
+        //validação
+        if(!email || !password){
+            res.statusCode = 422
+            throw new Error("email, and password required")
+        }
+
+
         //descontruindo o array user conectando com a tabela "onde" no email
         const [user] = await connection(userTableName)
         .where({email})
 
         //comparando a senha do usuário
-        const passwordOk: boolean = compareHash(password, user.password)
+        const passwordOk: boolean = compareHash(password, user?.password || '')
 
-       //se não estiver ok a senha "erro!" 
+       //se não estiver usuário ou senha ok, "erro!" 
        if (!passwordOk){
         res.statusCode = 401
         throw new Error("Invalid credentials")

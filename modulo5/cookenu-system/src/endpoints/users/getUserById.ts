@@ -13,10 +13,23 @@ export default async function getUserById(
 
         const token: string = req.headers.authorization as string
 
-        getTokenData(token)
+        const tokenData = getTokenData(token)
+
+        //validação
+        if(!tokenData){
+            res.statusCode = 401
+            throw new Error("Unauthorized")
+        }
 
         const [user] = await connection(userTableName)
             .where({ id: req.params.id})
+
+
+        //validação
+        if(!user){
+            res.statusCode = 404
+            throw new Error("Unauthorized")
+        }   
 
         const { id, email, name } = user
                 

@@ -18,8 +18,8 @@ export class UserController {
                 password: req.body.password
             }
             //1
-            const userBusiness = new UserBusiness()
-            const response = await userBusiness.signup(input)
+            
+            const response = await this.userBusiness.signup(input)
 
             res.status(201).send(response)
         } catch (error) {

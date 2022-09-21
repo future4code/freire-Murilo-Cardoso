@@ -8,7 +8,7 @@ export class UserBusiness {
 
     constructor(
         private userDatabase: UserDatabase,
-        private iDGenerator: IdGenerator,
+        private idGenerator: IdGenerator,
         private hashManager: HashManager,
         private authenticator: Authenticator
     ){}
@@ -45,11 +45,10 @@ export class UserBusiness {
             throw new Error("E-mail já cadastrado")
         }
 
-        const idGenerator = new IdGenerator()
-        const hashManager = new HashManager()
+       
 
-        const id = idGenerator.generate()
-        const hashedPassword = await hashManager.hash(password)
+        const id = this.idGenerator.generate()
+        const hashedPassword = await this.hashManager.hash(password)
 
         const user = new User(
             id,
@@ -66,8 +65,8 @@ export class UserBusiness {
             role: user.getRole()
         }
         //
-        const authenticator = new Authenticator()
-        const token = authenticator.generateToken(payload)
+        
+        const token = this.authenticator.generateToken(payload)
 
         const response = {
             message: "Cadastro realizado com sucesso",
@@ -124,8 +123,8 @@ export class UserBusiness {
             role: user.getRole()
         }
         //
-        const authenticator = new Authenticator()
-        const token = authenticator.generateToken(payload)
+        
+        const token = this.authenticator.generateToken(payload)
 
         const response = {
             message: "Login realizado com sucesso",
@@ -145,8 +144,8 @@ export class UserBusiness {
 
         const offset = limit * (page - 1)
         //
-        const authenticator = new Authenticator()
-        const payload = authenticator.getTokenPayload(token)
+        
+        const payload = this.authenticator.getTokenPayload(token)
 
         if (!payload) {
             throw new Error("Token inválido ou faltando")
@@ -192,8 +191,8 @@ export class UserBusiness {
         const token = input.token
         const idToDelete = input.idToDelete
 
-        const authenticator = new Authenticator()
-        const payload = authenticator.getTokenPayload(token)
+        
+        const payload = this.authenticator.getTokenPayload(token)
 
         if (!payload) {
             throw new Error("Token inválido ou faltando")
@@ -207,8 +206,8 @@ export class UserBusiness {
             throw new Error("Não é possível deletar a própria conta")
         }
         //
-        const userDatabase = new UserDatabase()
-        const userDB = await userDatabase.findById(idToDelete)
+        
+        const userDB = await this.userDatabase.findById(idToDelete)
 
         if (!userDB) {
             throw new Error("Usuário a ser deletado não encontrado")
@@ -240,8 +239,8 @@ export class UserBusiness {
             throw new Error("Parâmetros faltando")
         }
         //
-        const authenticator = new Authenticator()
-        const payload = authenticator.getTokenPayload(token)
+        
+        const payload = this.authenticator.getTokenPayload(token)
 
         if (!payload) {
             throw new Error("Token inválido")

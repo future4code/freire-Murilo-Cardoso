@@ -10,6 +10,7 @@
     "migrations": "tsc && node ./build/database/migrations/Migrations.js",
     "test": "jest"
   },
+  
   "keywords": [],
   "author": "",
   "license": "ISC",

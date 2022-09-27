@@ -27,7 +27,7 @@ describe("Olá, estamos testando",()=>{
 
 //ex 5
     test("numero aleatório de 1 a 10"), ()=>{
-        expect(numberRandom())
+        expect(numberRandomBetWeen1And10())
     }
 
 //ex 6 
@@ -39,15 +39,26 @@ test ("Verificar se existe um astrodev no array",()=>{
 })
 
 //ex 7
-    test(""), ()=>{
-        expect()
-    }
+
+test("Calcula idade",()=>{
+
+    expect(calcAge(2000))
+})
+
+
+//ex8
+
+test("Data",()=>{
+    expect(formatDate("2022/09/26"))
+})
+
 
     test("O número 20 deve ser maior que 15", ()=>{
 
         expect(20).toBeGreaterThan(15)
 
     })
+
 
     test("Testando se o valor é menor", ()=>{
         const n = 100
@@ -196,4 +207,18 @@ const calcAverage = (list:number[]):number=>{
     const average = Math.ceil(totalSum / list.length)
 
     return average
+}
+
+const calcAge = (year: number): number => {
+    const currentYear = new Date().getFullYear()
+    const age = currentYear - year
+    
+    return age
+}
+
+const formatDate = (initialDate: string): string => {
+    const date = new Date(initialDate)
+		const formattedDate = date.toLocaleDateString()
+
+    return formattedDate 
 }

@@ -1,0 +1,10 @@
+### Ping
+GET http://localhost:3003/ping
+
+
+### Outro endpoint
+
+
+
+
+### Outro endpoint

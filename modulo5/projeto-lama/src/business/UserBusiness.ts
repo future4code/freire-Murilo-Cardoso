@@ -17,6 +17,7 @@ export class UserBusiness {
     ) {}
 
     public signup = async (input: ISignupInputDTO): Promise<ISignupOutputDTO> => {
+        
         const { name, email, password } = input
 
         if (typeof name !== "string") {
@@ -78,6 +79,7 @@ export class UserBusiness {
     }
 
     public login = async (input: ILoginInputDTO): Promise<ILoginOutputDTO> => {
+        
         const { email, password } = input
 
         if (typeof email !== "string") {

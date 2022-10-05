@@ -10,8 +10,10 @@ export interface ITokenPayload {
 }
 
 export class Authenticator {
+
   generateToken = (payload: ITokenPayload): string => {
-    const token = jwt.sign(payload, process.env.JWT_KEY as string, {
+    const token = jwt.sign(payload, process.env.JWT_KEY as string, 
+    {
       expiresIn: process.env.JWT_EXPIRES_IN,
     });
 

@@ -18,7 +18,7 @@ export class UserController {
 
             const response = await this.userBusiness.signup(input)
             res.status(201).send(response)
-        } catch (error) {
+        } catch (error: any) {
             console.log(error)
             if (error instanceof BaseError) {
                 return res.status(error.statusCode).send({ message: error.message })

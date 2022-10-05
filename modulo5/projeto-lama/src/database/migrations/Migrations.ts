@@ -26,11 +26,15 @@ class Migrations extends BaseDatabase {
         }
     }
 
+/*  DROP TABLE IF EXISTS ${UserDatabase.TABLE_SHOWS};
+    DROP TABLE IF EXISTS ${UserDatabase.TABLE_TICKETS}; */
+
     createTables = async () => {
         await BaseDatabase.connection.raw(`
 
         DROP TABLE IF EXISTS ${UserDatabase.TABLE_USERS};
-        
+
+
         CREATE TABLE IF NOT EXISTS ${UserDatabase.TABLE_USERS}(
             id VARCHAR(255) PRIMARY KEY,
             name VARCHAR(255) NOT NULL,
@@ -38,7 +42,20 @@ class Migrations extends BaseDatabase {
             password VARCHAR(255) NOT NULL,
             role ENUM("NORMAL", "ADMIN") DEFAULT "NORMAL" NOT NULL
         );
-
+        
+        CREATE TABLE IF NOT EXISTS Template_Lama_Shows(
+            id VARCHAR(255) PRIMARY KEY,
+            band VARCHAR(255) NOT NULL,
+            start_at DATE NOT NULL
+        );
+            
+        CREATE TABLE IF NOT EXISTS Template_Lama_Tickets(
+            id VARCHAR(255) PRIMARY KEY,
+            show_id VARCHAR(255) NOT NULL,
+            user_id VARCHAR(255) NOT NULL,
+            FOREIGN KEY (show_id) REFERENCES Template_Lama_Shows(id),
+            FOREIGN KEY (user_id) REFERENCES Template_Lama_Users(id)
+        );
     `)
     }
 

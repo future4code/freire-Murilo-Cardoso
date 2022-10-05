@@ -3,8 +3,10 @@ import { BaseDatabase } from "./BaseDatabase"
 
 export class UserDatabase extends BaseDatabase {
     public static TABLE_USERS = "Template_Users"
-
-    public toUserDBModel = (user: User): IUserDB => {
+    public static TABLE_SHOWS = "Template_Lama_Shows"
+    public static TABLE_TICEKTS = "Template_Lama_Tickets"
+    
+    private toUserDBModel = (user: User): IUserDB => {
         const userDB: IUserDB = {
             id: user.getId(),
             name: user.getName(),

@@ -19,10 +19,20 @@ export interface TicketInputDTO{
     showId:string 
 }
 
+
 export interface TicketOutputDTO{
     message: string, 
     showDate: Date,
     band: string 
+}
+
+export interface DeleteTicketInputDTO{
+    token:string,
+    showId:string 
+}
+
+export interface DeleteTicketOutpurDTO{
+    message: string
 }
 
 export interface TicketDB{
@@ -38,6 +48,11 @@ export interface IShowDB{
     starts_at: Date
 
 }
+
+
+
+
+//class do show! 
 
 export class Show {  
     constructor(

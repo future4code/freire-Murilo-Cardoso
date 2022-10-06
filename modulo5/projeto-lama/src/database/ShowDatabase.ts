@@ -78,12 +78,15 @@ class ShowDatabase extends BaseDatabase {
         return result[0]
     }
 
-    public createTicket = async (ticket: TicketDB) =>{
-
+    public createTicket = async (ticket: TicketDB):Promise<void> =>{
         await BaseDatabase.connection(ShowDatabase.TABLE_TICKETS)
         .insert(ticket)
     }
 
+
+    public deleteTicketById = async (id:string):Promise<void> => {
+        await BaseDatabase.connection(ShowDatabase.TABLE_TICKETS).delete().where({id})
+    }
 }
 
 export default ShowDatabase

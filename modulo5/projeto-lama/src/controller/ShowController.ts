@@ -1,9 +1,12 @@
 import { Request, Response } from "express"
-import { ShowInputDTO, TicketInputDTO } from "../models/Show"
+import { DeleteTicketInputDTO, ShowInputDTO, TicketInputDTO } from "../models/Show"
 import ShowBusiness from "../business/ShowBusiness"
 
 class ShowController{
 
+    constructor(private showBusiness:ShowBusiness){
+
+    }
 
     public create = async (req: Request, res: Response) => {
         try {
@@ -12,9 +15,8 @@ class ShowController{
                 band: req.body.band,
                 startsAt: req.body.startsAt
             }
-            const showBusiness = new ShowBusiness()
-
-            const response = await showBusiness.create(input)
+            
+            const response = await this.showBusiness.create(input)
 
             res.status(201).send(response)
         } catch (error: any) {
@@ -25,9 +27,9 @@ class ShowController{
     public getShows = async (req: Request, res: Response) =>{
         
         try {
-            const showBusiness = new ShowBusiness()
+            //const showBusiness = new ShowBusiness()
 
-            const response = await showBusiness.getShows()
+            const response = await this.showBusiness.getShows()
         } catch (error:any) {
             
         }
@@ -42,9 +44,9 @@ class ShowController{
                 showId: req.params.id  
             }
 
-            const showBusiness = new ShowBusiness()
+           // const showBusiness = new ShowBusiness()
 
-            const response = await showBusiness.buyTicket(input)
+            const response = await this.showBusiness.buyTicket(input)
 
             res.status(201).send(response)
 
@@ -53,6 +55,23 @@ class ShowController{
 
         }
     }
+
+    public deleteTicket = async(req: Request, res: Response)=>{
+
+            try {
+                const input:DeleteTicketInputDTO ={
+                    token: req.headers.authorization!,
+                    showId: req.params.id  
+                }
+                
+                //const showBusiness = new ShowBusiness()
+                const response = await  this.showBusiness.deleteTicket(input)
+            } catch (error:any) {
+                
+            }
+    }
+
+
 }
 
 export default ShowController

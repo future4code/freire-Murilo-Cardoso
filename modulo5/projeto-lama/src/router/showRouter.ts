@@ -8,4 +8,6 @@ export const showRouter = Router()
 const showController = new ShowController()
 
 
-userRouter.post("/create",showController.create )
+showRouter.post("/create",showController.create )
+showRouter.get("/Allshows",showController.getShows)
+showRouter.post("/ticket/:id",showController.buyTicket )

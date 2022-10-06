@@ -1,43 +1,129 @@
-import { ShowInputDTO } from "../models/Show"
+import { Show, ShowInputDTO, ShowOutputDTO, ShowsOutputDTO, TicketDB, TicketInputDTO, TicketOutputDTO } from "../models/Show"
 import { AuthenticationError } from "../errors/AuthenticationError"
 import {Authenticator} from "../services/Authenticator"
 import { USER_ROLES } from "../models/User"
 import ShowDatabase from "../database/ShowDatabase"
+import { IdGenerator } from "../services/IdGenerator"
 
 class ShowBusiness {
 
+    public create = async (input:ShowInputDTO): Promise<ShowOutputDTO> => {
+        const {token, band, startsAt} = input
 
+        if(!token ){
+            throw new AuthenticationError("Token inválido ou faltando") 
+        }
+        
+        const payload = new Authenticator().getTokenPayload(token)
 
-public create = async (input:ShowInputDTO) => {
-    const {token, band, startsAt} = input
+        if(!payload){
+            throw new AuthenticationError("Usuario não encontrado")
+        }
 
-    if(!token ){
-        throw new AuthenticationError("Token inválido ou faltando") 
+        if(payload.role !== USER_ROLES.ADMIN){
+            throw new AuthenticationError("Somente admin pode criar shows")
+        }
+
+        const startAtDate = new Date(startsAt)
+
+        const festivalStartDate = new Date("2022/12/05")
+
+        if(startAtDate < festivalStartDate) {
+            throw new Error ("A data do show não pode ser anterior a 2022/12/05")
+        }
+
+        const showDatabase = new ShowDatabase()
+        const showAlreadyExist = await showDatabase.findShowByDate(startAtDate)
+
+        if(showAlreadyExist){
+            throw new AuthenticationError("Já existe um show neste dia")
+        }
+
+        const id = new IdGenerator().generate()
+        const show = new Show(id, band, startAtDate)
+
+        await showDatabase.createShow(show)
+
+        const response: ShowOutputDTO={
+            message:`Show de ${show.getBand()} criado com sucesso!`,
+            show
+        }
+        return response
     }
-    
-    const payload = new Authenticator().getTokenPayload(token)
 
-    if(!payload){
-        throw new AuthenticationError("Usuario não encontrado")
+    public getShows = async ():Promise<ShowsOutputDTO> => {
+        const showDatabase = new ShowDatabase()
+
+        const showsDB = await showDatabase.getShows()
+
+        for(let show of showsDB){
+            const ticket  = await showDatabase.getTicketsByShowId(show.getId())
+            show.setTicket(5000- ticket)
+        }
+
+        const response:ShowsOutputDTO = {
+            shows:showsDB
+        }
+
+        return response    
     }
 
-    if(payload.role !== USER_ROLES.ADMIN){
-        throw new AuthenticationError("Somente admin pode criar shows")
+    public buyTicket = async (input:TicketInputDTO):Promise<TicketOutputDTO> => {
+        const {token, showId} = input  
+        
+        if(!token ){
+            throw new AuthenticationError("Token faltando") 
+        }
+        
+        const payload = new Authenticator().getTokenPayload(token)
+
+        if(!payload){
+            throw new AuthenticationError("Token inválido")
+        }
+
+        const showDatabase = new ShowDatabase()
+        const showDB = await showDatabase.findShowById(showId)
+
+
+        if(!showDB){
+            throw new AuthenticationError("Show não encontrado ")
+        }
+
+        const tickets = await showDatabase.getTicketsByShowId(showId)
+
+        const show = new Show(
+            showDB.id, 
+            showDB.band, 
+            showDB.starts_at,
+            5000 - tickets
+        )
+
+        if(show.getTickets() === 0){
+            throw new Error("Ingressos esgotados")
+        }
+        const isTicketAlreadyExist = await showDatabase.findTicket(showId, payload.id)
+
+        if(isTicketAlreadyExist){
+            throw new AuthenticationError("Opa! Você já comprou o ingresso para este show.")
+        }
+
+        const ticket:TicketDB ={
+            id: new IdGenerator().generate(),
+            show_id: showId,
+            user_id: payload.id 
+        }
+
+        await showDatabase.createTicket(ticket)
+
+
+        const response:TicketOutputDTO = {
+            message: "Ingresso reservado com sucesso!",
+            showDate: show.getStartsAt(),
+            band: show.getBand() 
+        } 
+
+        return response
     }
-
-    const startAtDate = new Date(startsAt)
-
-    const festivalStartDate = new Date("2022/12/05")
-
-    if(startAtDate < festivalStartDate) {
-        throw new Error ("A data do show não pode ser anterior a 2022/12/05")
-    }
-
-    const showDatabase = new ShowDatabase()
-    const showAlreadyExist = await showDatabase.findShowByDate(startAtDate)
-
-}
-
 }
 
 export default ShowBusiness

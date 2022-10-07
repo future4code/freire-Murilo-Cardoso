@@ -1,7 +1,7 @@
-import { IUserDB, User } from "../models/User"
-import { BaseDatabase } from "./BaseDatabase"
+import {BaseDatabase} from "../../../src/database/BaseDatabase"
+import { IUserDB, User, USER_ROLES } from "../../../src/models/User"
 
-export class UserDatabase extends BaseDatabase {
+export class UserDatabaseMock extends BaseDatabase {
     public static TABLE_USERS = "Template_Users"
     public static TABLE_SHOWS = "Template_Lama_Shows"
     public static TABLE_TICEKTS = "Template_Lama_Tickets"
@@ -19,19 +19,22 @@ export class UserDatabase extends BaseDatabase {
     }
 
     public findByEmail = async (email: string): Promise<IUserDB | undefined> => {
-        const result: IUserDB[] = await BaseDatabase
-            .connection(UserDatabase.TABLE_USERS)
-            .select()
-            .where({ email })
 
-        return result[0]
+        switch(email){
+            case "incluir email aqui":
+                return {
+                    id:"incluir id",
+                    name: "astrodev",
+                    email: "astrodev@gmail.com",
+                    password: "passwordaqui",
+                    role: USER_ROLES.ADMIN 
+                }
+                default:
+                    return undefined
+        }
     }
 
     public createUser = async (user: User): Promise<void> => {
-        const userDB = this.toUserDBModel(user)
-
-        await BaseDatabase
-            .connection(UserDatabase.TABLE_USERS)
-            .insert(userDB)
+       
     }
 }

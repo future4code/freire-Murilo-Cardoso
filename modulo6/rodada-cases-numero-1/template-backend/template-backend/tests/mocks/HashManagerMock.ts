@@ -1,4 +1,4 @@
-export class HashManagerMock {
+/* export class HashManagerMock {
     public hash = async (plaintext: string): Promise<string> => {
         if (plaintext == "bananinha") {
             return "hash-bananinha"
@@ -14,4 +14,4 @@ export class HashManagerMock {
 
         return false
     }
-}
+} */

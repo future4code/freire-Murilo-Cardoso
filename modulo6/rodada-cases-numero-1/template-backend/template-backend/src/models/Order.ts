@@ -1,4 +1,14 @@
 
+export interface IOrdersDB{
+    id: string
+}
+
+export interface IOrderItemsDB{
+    id: string,
+    pizza_name:string,
+    quantity:number,
+    order_id:string 
+}
 
 export interface IOrderItem{
     id: string,
@@ -21,8 +31,17 @@ export class Order{
         return this.orderItems
     }
 
-    public setOrderItems = () =>{
-        return this.orderItems
+    public setOrderItems = (newOrderItems: IOrderItem[]) =>{
+        this.orderItems = newOrderItems
     }
+
+    public addOrderItem = (newOrderItems: IOrderItem)=>{
+        this.orderItems.push(newOrderItems)
+    }
+
+    public removeOrderItem = (idToRemove: string)=>{
+        return this.orderItems.filter(orderItem => orderItem.id !== idToRemove)
+    }
+
 
 }

@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node ./build/src/index.js",
     "build": "tsc",
-    "dev": "  ",
+    "dev": "ts-node-dev ./src/index.ts",
     "migrations": "tsc && node ./build/src/database/migrations/Migrations.js",
     "test": "jest"
   },

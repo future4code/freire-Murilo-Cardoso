@@ -1,4 +1,4 @@
-import { USER_ROLES } from "../../src/models/User"
+/* import { USER_ROLES } from "../../src/models/User"
 import { ITokenPayload } from "../../src/services/Authenticator"
 
 export class AuthenticatorMock {
@@ -34,4 +34,4 @@ export class AuthenticatorMock {
         }
     }
 
-}
+} */

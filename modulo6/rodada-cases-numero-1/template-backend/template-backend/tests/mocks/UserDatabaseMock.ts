@@ -1,4 +1,4 @@
-import { IUserDB, User, USER_ROLES } from "../../src/models/User"
+/* import { IUserDB, User, USER_ROLES } from "../../src/models/User"
 import { BaseDatabase } from "../../src/database/BaseDatabase"
 
 export class UserDatabaseMock extends BaseDatabase {
@@ -46,4 +46,4 @@ export class UserDatabaseMock extends BaseDatabase {
     }
 
     public createUser = async (user: User): Promise<void> => {}
-}
+} */

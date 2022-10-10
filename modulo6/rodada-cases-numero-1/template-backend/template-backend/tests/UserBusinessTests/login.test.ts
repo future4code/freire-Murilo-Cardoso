@@ -1,4 +1,4 @@
-import { UserBusiness } from "../../src/business/UserBusiness"
+/* import { UserBusiness } from "../../src/business/UserBusiness"
 import { BaseError } from "../../src/errors/BaseError"
 import { ILoginInputDTO, ISignupInputDTO } from "../../src/models/User"
 import { AuthenticatorMock } from ".././mocks/AuthenticatorMock"
@@ -63,4 +63,4 @@ describe("Testando o método login da UserBusiness", () => {
             }
         }
     })
-})
+}) */

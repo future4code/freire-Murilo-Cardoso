@@ -1,36 +1,32 @@
+import { IPizzaDB, IPizzasIngredientsDB, Pizza } from "../models/Pizza"
 import { BaseDatabase } from "./BaseDatabase"
 
 export class PizzaDataBase extends BaseDatabase {
     public static TABLE_PIZZAS = "Amb_Pizzas"
     public static TABLE_INGREDIENTS = "Amb_Ingredients"
-    public static TABLE_PIZZA_INGREDIENTS = "Amb_PIzzas_Ingredients"
+    public static TABLE_PIZZA_INGREDIENTS = "Amb_Pizzas_Ingredients"
 
-    public toUserDBModel = (user: User): IUserDB => {
-        const userDB: IUserDB = {
-            id: user.getId(),
-            name: user.getName(),
-            email: user.getEmail(),
-            password: user.getPassword(),
-            role: user.getRole()
+    public toPizzaDBModel = (pizza: Pizza): IPizzaDB => {
+    
+        return {
+           name: pizza.getName(),
+           price: pizza.getPrice()
         }
-
-        return userDB
-    }
-
-    public findByEmail = async (email: string): Promise<IUserDB | undefined> => {
-        const result: IUserDB[] = await BaseDatabase
-            .connection(UserDatabase.TABLE_USERS)
+}
+    public getPizzas = async (): Promise<IPizzaDB[]> => {
+        const result: IPizzaDB[] = await BaseDatabase
+            .connection(PizzaDataBase.TABLE_PIZZAS)
             .select()
-            .where({ email })
 
-        return result[0]
+        return result
     }
 
-    public createUser = async (user: User): Promise<void> => {
-        const userDB = this.toUserDBModel(user)
-
-        await BaseDatabase
-            .connection(UserDatabase.TABLE_USERS)
-            .insert(userDB)
-    }
+    public getIngredients = async (pizzaName:string):Promise<string[]> => {
+        const result:IPizzasIngredientsDB[] = await BaseDatabase
+            .connection(PizzaDataBase.TABLE_PIZZA_INGREDIENTS)
+            .select("ingredient_name")
+            .where({pizza_name: pizzaName})
+        
+            return result.map(item => item.ingredient_name)
+    } 
 }

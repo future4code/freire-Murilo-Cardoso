@@ -1,4 +1,4 @@
-import { UserBusiness } from "../../src/business/UserBusiness"
+/* import { UserBusiness } from "../../src/business/UserBusiness"
 import { ISignupInputDTO } from "../../src/models/User"
 import { AuthenticatorMock } from ".././mocks/AuthenticatorMock"
 import { HashManagerMock } from ".././mocks/HashManagerMock"
@@ -24,4 +24,4 @@ describe("Testando o método signup da UserBusiness", () => {
         expect(response.message).toBe("Cadastro realizado com sucesso")
         expect(response.token).toBe("token-mock-normal")
     })
-})
+}) */

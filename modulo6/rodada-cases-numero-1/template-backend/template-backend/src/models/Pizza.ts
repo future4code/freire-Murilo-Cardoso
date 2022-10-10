@@ -9,7 +9,7 @@ export interface IIngredientsDB {
 }
 
 export interface IPizzasIngredientsDB {
-    name: string,
+    pizza_name: string,
     ingredient_name: string
 }
 
@@ -49,7 +49,16 @@ export class Pizza {
     }
 
     public removeIngredient = (ingredientToRemove:string) => {
-        return this.ingredients.filter((ingredient)=>(ingredient !== ingredientToRemove ))
+        return this.ingredients.filter(ingredient => ingredient !== ingredientToRemove )
     }
 
+}
+
+export interface IGetPizzasOutputDTO {
+    message: string,
+    pizzas: {
+        name:string,
+        price: number,
+        ingredients: string[]
+    }[]
 }

@@ -1,6 +1,6 @@
 import { IIngredientsDB, IPizzaDB, IPizzasIngredientsDB } from "../../models/Pizza";
 
-export const pizzasDB: IPizzaDB[] = [
+export const pizzasSeed: IPizzaDB[] = [
   {
     name: "Margherita",
     price: 5,
@@ -23,7 +23,7 @@ export const pizzasDB: IPizzaDB[] = [
   },
 ];
 
-export const ingredientsDB: IIngredientsDB[] = [
+export const ingredientsSeed: IIngredientsDB[] = [
     {
     name: "tomato",
   },
@@ -47,7 +47,7 @@ export const ingredientsDB: IIngredientsDB[] = [
   }
 ];
 
-export const pizzasIngredients: IPizzasIngredientsDB[] = [
+export const pizzasIngredientsSeed: IPizzasIngredientsDB[] = [
 
     {
         pizza_name: "Margherita",

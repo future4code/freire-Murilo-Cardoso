@@ -34,7 +34,7 @@ export class OrderController {
             if (error instanceof BaseError) {
                 return res.status(error.statusCode).send({ message: error.message })
             }
-            res.status(500).send({ message: "Erro inesperado ao buscar os pedidos" })
+            res.status(500).send({ message: "Erro inesperado ao buscar pedidos" })
         }
     }
 }

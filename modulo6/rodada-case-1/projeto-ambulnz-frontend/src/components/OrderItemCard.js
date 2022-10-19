@@ -1,21 +1,24 @@
 import styled from "styled-components"
 
-export const ContainerLI = styled.li`
-        display: flex;
-        button{
-            width: 100px;
-            height: 50px;
-        }
+export const ContainerLi = styled.li`
+    display: flex;
 `
 
-export const OrderItemCard = (props) => {
+function OrderItemCard(props) {
+    const { pizza, removeFromCart } = props
 
-    const  {item} = props
-    return(
-        <ContainerLI>
-            <p>Pizza {item.name} - R$ 10,00 x 1</p>
-            <button>Remover item</button>
-        </ContainerLI>
+    return (
+        <ContainerLi>
+            <p>
+                Pizza {pizza.name}
+                - {pizza.price.toLocaleString(
+                    'pt-br',
+                    { style: 'currency', currency: 'USD' }
+                )}
+                 {" "} x {pizza.quantity}</p>
+            <button onClick={()=> removeFromCart(pizza)}>Remover item</button>
+        </ContainerLi>
     )
-
 }
+
+export default OrderItemCard
